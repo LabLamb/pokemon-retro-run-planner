@@ -1,7 +1,14 @@
 import logoDark from "./logo-dark.svg";
 import logoLight from "./logo-light.svg";
+import { useTranslation } from "react-i18next";
+import { Link, useParams } from "react-router";
+import type { Locale } from "../lib/i18n";
 
 export function Welcome() {
+  const { t } = useTranslation();
+  const params = useParams();
+  const currentLocale = (params.locale as Locale) || "en";
+
   return (
     <main className="flex items-center justify-center pt-16 pb-4">
       <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
@@ -18,12 +25,50 @@ export function Welcome() {
               className="hidden w-full dark:block"
             />
           </div>
+          <h1 className="text-4xl font-bold text-center px-4 text-gray-800 dark:text-gray-100">
+            {t("welcome.title")}
+          </h1>
+          <p className="text-xl text-center px-4 text-gray-600 dark:text-gray-300">
+            {t("welcome.description")}
+          </p>
         </header>
         <div className="max-w-[300px] w-full space-y-6 px-4">
           <nav className="rounded-3xl border border-gray-200 p-6 dark:border-gray-700 space-y-4">
             <p className="leading-6 text-gray-700 dark:text-gray-200 text-center">
-              What&apos;s next?
+              {t("nav.home")} - {t("nav.planner")} - {t("nav.pokemon")}
             </p>
+            <div className="flex gap-2 justify-center">
+              <Link
+                to="/en"
+                className={`px-3 py-2 rounded ${
+                  currentLocale === "en"
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-200"
+                }`}
+              >
+                EN
+              </Link>
+              <Link
+                to="/es"
+                className={`px-3 py-2 rounded ${
+                  currentLocale === "es"
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-200"
+                }`}
+              >
+                ES
+              </Link>
+              <Link
+                to="/fr"
+                className={`px-3 py-2 rounded ${
+                  currentLocale === "fr"
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-200"
+                }`}
+              >
+                FR
+              </Link>
+            </div>
             <ul>
               {resources.map(({ href, text, icon }) => (
                 <li key={href}>
