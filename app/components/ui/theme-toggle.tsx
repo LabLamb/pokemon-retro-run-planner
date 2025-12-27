@@ -1,21 +1,52 @@
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, Smartphone, Gamepad2, Tv } from "lucide-react";
 import { Button } from "./button";
 import { useTheme } from "../../lib/theme-provider";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./dropdown-menu";
+
+const themes = [
+  { value: "fire-red", label: "Fire Red", icon: Sun },
+  { value: "leaf-green", label: "Leaf Green", icon: Moon },
+  { value: "gb", label: "Game Boy", icon: Smartphone },
+  { value: "gbc", label: "Game Boy Color", icon: Gamepad2 },
+  { value: "gba", label: "Game Boy Advance", icon: Tv },
+] as const;
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
+  
+  const currentTheme = themes.find(t => t.value === theme) || themes[0];
+  const Icon = currentTheme.icon;
 
   return (
-    <Button
-      variant="outline"
-      size="icon"
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="rounded-full"
-      aria-label="Toggle theme"
-    >
-      <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-      <span className="sr-only">Toggle theme</span>
-    </Button>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button
+          variant="outline"
+          size="icon"
+          className="rounded-full"
+          aria-label="Toggle theme"
+        >
+          <Icon className="h-[1.2rem] w-[1.2rem]" />
+          <span className="sr-only">Toggle theme</span>
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        {themes.map(({ value, label, icon: ThemeIcon }) => (
+          <DropdownMenuItem
+            key={value}
+            onClick={() => setTheme(value)}
+            className={theme === value ? "bg-accent" : ""}
+          >
+            <ThemeIcon className="mr-2 h-4 w-4" />
+            {label}
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }

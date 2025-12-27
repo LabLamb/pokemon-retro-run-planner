@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-type Theme = "light" | "dark";
+type Theme = "fire-red" | "leaf-green" | "gb" | "gbc" | "gba";
 
 type ThemeProviderProps = {
   children: React.ReactNode;
@@ -14,7 +14,7 @@ type ThemeProviderState = {
 };
 
 const initialState: ThemeProviderState = {
-  theme: "light",
+  theme: "fire-red",
   setTheme: () => null,
 };
 
@@ -22,7 +22,7 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 
 export function ThemeProvider({
   children,
-  defaultTheme = "light",
+  defaultTheme = "fire-red",
   storageKey = "pokemon-planner-theme",
   ...props
 }: ThemeProviderProps) {
@@ -34,13 +34,13 @@ export function ThemeProvider({
     
     // Try to get theme from localStorage
     const stored = localStorage.getItem(storageKey) as Theme | null;
-    if (stored && (stored === "light" || stored === "dark")) {
+    if (stored && ["fire-red", "leaf-green", "gb", "gbc", "gba"].includes(stored)) {
       return stored;
     }
     
     // Fall back to browser preference
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      return "dark";
+      return "leaf-green";
     }
     
     return defaultTheme;
@@ -49,7 +49,7 @@ export function ThemeProvider({
   useEffect(() => {
     const root = window.document.documentElement;
 
-    root.classList.remove("light", "dark");
+    root.classList.remove("fire-red", "leaf-green", "gb", "gbc", "gba");
     root.classList.add(theme);
   }, [theme]);
 
