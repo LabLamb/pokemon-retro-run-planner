@@ -37,37 +37,31 @@ export function Welcome() {
             <p className="leading-6 text-gray-700 dark:text-gray-200 text-center">
               {t("nav.home")} - {t("nav.planner")} - {t("nav.pokemon")}
             </p>
-            <div className="flex gap-2 justify-center">
-              <Link
-                to="/en"
-                className={`px-3 py-2 rounded ${
-                  currentLocale === "en"
-                    ? "bg-blue-600 text-white"
-                    : "bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-200"
-                }`}
-              >
-                EN
-              </Link>
-              <Link
-                to="/es"
-                className={`px-3 py-2 rounded ${
-                  currentLocale === "es"
-                    ? "bg-blue-600 text-white"
-                    : "bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-200"
-                }`}
-              >
-                ES
-              </Link>
-              <Link
-                to="/fr"
-                className={`px-3 py-2 rounded ${
-                  currentLocale === "fr"
-                    ? "bg-blue-600 text-white"
-                    : "bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-200"
-                }`}
-              >
-                FR
-              </Link>
+            <div className="flex gap-2 justify-center flex-wrap">
+              {[
+                { code: "en", label: "EN" },
+                { code: "es", label: "ES" },
+                { code: "fr", label: "FR" },
+                { code: "de", label: "DE" },
+                { code: "it", label: "IT" },
+                { code: "ja", label: "日本語" },
+                { code: "ko", label: "한국어" },
+                { code: "pt", label: "PT" },
+                { code: "zh-Hans", label: "简体" },
+                { code: "zh-Hant", label: "繁體" },
+              ].map(({ code, label }) => (
+                <Link
+                  key={code}
+                  to={`/${code}`}
+                  className={`px-3 py-2 rounded text-sm ${
+                    currentLocale === code
+                      ? "bg-blue-600 text-white"
+                      : "bg-gray-200 text-gray-700 dark:bg-gray-700 dark:text-gray-200"
+                  }`}
+                >
+                  {label}
+                </Link>
+              ))}
             </div>
             <ul>
               {resources.map(({ href, text, icon }) => (

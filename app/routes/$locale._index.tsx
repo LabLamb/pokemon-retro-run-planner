@@ -8,16 +8,30 @@ import i18n from "../lib/i18n";
 
 export function meta({ params }: Route.MetaArgs) {
   const locale = (params.locale as Locale) || defaultLocale;
-  const titles = {
+  const titles: Record<Locale, string> = {
     en: "Pokémon Retro Run Planner",
     es: "Planificador de Pokémon Retro",
     fr: "Planificateur Pokémon Rétro",
+    de: "Pokémon Retro Run Planner",
+    it: "Pianificatore Pokémon Retro",
+    ja: "ポケモンレトロランプランナー",
+    ko: "포켓몬 레트로 런 플래너",
+    pt: "Planejador Pokémon Retro",
+    "zh-Hans": "宝可梦复古跑步规划器",
+    "zh-Hant": "寶可夢復古跑步規劃器",
   };
   
-  const descriptions = {
+  const descriptions: Record<Locale, string> = {
     en: "Plan your perfect retro Pokémon adventure",
     es: "Planifica tu aventura perfecta de Pokémon retro",
     fr: "Planifiez votre aventure Pokémon rétro parfaite",
+    de: "Plane dein perfektes Pokémon-Retro-Abenteuer",
+    it: "Pianifica la tua perfetta avventura Pokémon retro",
+    ja: "完璧なレトロポケモンアドベンチャーを計画しよう",
+    ko: "완벽한 레트로 포켓몬 모험을 계획하세요",
+    pt: "Planeje sua aventura perfeita de Pokémon retro",
+    "zh-Hans": "规划您完美的复古宝可梦冒险",
+    "zh-Hant": "規劃您完美的復古寶可夢冒險",
   };
 
   return [

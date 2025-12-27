@@ -1,0 +1,14 @@
+{
+  "welcome": {
+    "title": "포켓몬 레트로 런 플래너에 오신 것을 환영합니다",
+    "description": "완벽한 레트로 포켓몬 모험을 계획하세요",
+    "getStarted": "시작하기",
+    "learnMore": "자세히 알아보기"
+  },
+  "nav": {
+    "home": "홈",
+    "planner": "플래너",
+    "pokemon": "포켓몬",
+    "about": "정보"
+  }
+}

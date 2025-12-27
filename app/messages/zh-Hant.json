@@ -1,0 +1,14 @@
+{
+  "welcome": {
+    "title": "歡迎來到寶可夢復古跑步規劃器",
+    "description": "規劃您完美的復古寶可夢冒險",
+    "getStarted": "開始",
+    "learnMore": "了解更多"
+  },
+  "nav": {
+    "home": "主頁",
+    "planner": "規劃器",
+    "pokemon": "寶可夢",
+    "about": "關於"
+  }
+}

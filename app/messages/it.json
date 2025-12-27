@@ -1,0 +1,14 @@
+{
+  "welcome": {
+    "title": "Benvenuto al Pianificatore Pokémon Retro",
+    "description": "Pianifica la tua perfetta avventura Pokémon retro",
+    "getStarted": "Inizia",
+    "learnMore": "Scopri di più"
+  },
+  "nav": {
+    "home": "Home",
+    "planner": "Pianificatore",
+    "pokemon": "Pokémon",
+    "about": "Informazioni"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "welcome": {
+    "title": "ポケモンレトロランプランナーへようこそ",
+    "description": "完璧なレトロポケモンアドベンチャーを計画しよう",
+    "getStarted": "始める",
+    "learnMore": "詳細を見る"
+  },
+  "nav": {
+    "home": "ホーム",
+    "planner": "プランナー",
+    "pokemon": "ポケモン",
+    "about": "について"
+  }
+}
