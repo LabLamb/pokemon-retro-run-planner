@@ -1,0 +1,14 @@
+{
+  "welcome": {
+    "title": "Welcome to Pokémon Retro Run Planner",
+    "description": "Plan your perfect retro Pokémon adventure",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "nav": {
+    "home": "Home",
+    "planner": "Planner",
+    "pokemon": "Pokémon",
+    "about": "About"
+  }
+}
