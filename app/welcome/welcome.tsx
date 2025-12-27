@@ -3,6 +3,7 @@ import logoLight from "./logo-light.svg";
 import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router";
 import type { Locale } from "../lib/i18n";
+import { ThemeToggle } from "../components/ui/theme-toggle";
 
 export function Welcome() {
   const { t } = useTranslation();
@@ -10,9 +11,12 @@ export function Welcome() {
   const currentLocale = (params.locale as Locale) || "en";
 
   return (
-    <main className="flex items-center justify-center pt-16 pb-4">
+    <main className="min-h-screen flex items-center justify-center pt-16 pb-4">
       <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
         <header className="flex flex-col items-center gap-9">
+          <div className="absolute top-4 right-4">
+            <ThemeToggle />
+          </div>
           <div className="w-[500px] max-w-[100vw] p-4">
             <img
               src={logoLight}
