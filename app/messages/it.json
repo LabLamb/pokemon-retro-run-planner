@@ -2,6 +2,8 @@
   "welcome": {
     "title": "Benvenuto al Pianificatore Pokémon Retro",
     "description": "Pianifica la tua perfetta avventura Pokémon retro",
+    "longDescription": "Questa applicazione web ti aiuta a pianificare le tue partite ai giochi Pokémon retro fornendo strumenti per cercare Pokémon con abilità di campo specifiche, costruire squadre ottimali e strategizzare la tua avventura attraverso i giochi Pokémon classici.",
+    "goToPlanner": "Vai al Pianificatore",
     "getStarted": "Inizia",
     "learnMore": "Scopri di più"
   },
@@ -9,6 +11,152 @@
     "home": "Home",
     "planner": "Pianificatore",
     "pokemon": "Pokémon",
-    "about": "Informazioni"
+    "about": "Informazioni"  },
+  "locale": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "ja": "日本語",
+    "ko": "한국어",
+    "pt": "Português",
+    "zh-Hans": "简体中文",
+    "zh-Hant": "繁體中文"
+  },
+  "team": {
+    "label": "La Tua Squadra",
+    "emptySlot": "Vuoto",
+    "clearButton": "Cancella Squadra",
+    "clearConfirmTitle": "Cancellare la Squadra?",
+    "clearConfirmDescription": "Sei sicuro di voler cancellare tutta la tua squadra? Questa azione non può essere annullata.",
+    "clearConfirmCancel": "Annulla",
+    "clearConfirmConfirm": "Cancella Squadra"
+  },
+  "planner": {
+    "title": "Pianificatore Avventure Pokémon Retro",
+    "tools": {
+      "title": "Strumenti di Pianificazione",
+      "description": "Scegli uno strumento per pianificare la tua avventura Pokémon perfetta",
+      "available": "Disponibile",
+      "comingSoon": "Prossimamente",
+      "open": "Apri Strumento",
+      "moreTools": "Altri Strumenti",
+      "moreToolsDescription": "Costruttore di squadre, pianificatore di percorsi e altro in arrivo!",
+      "fieldMovesSearch": {
+        "title": "Ricerca Abilità di Campo",
+        "description": "Trova Pokémon che possono imparare MN e mosse di campo specifiche per la tua avventura"
+      }
+    },
+    "features": "Funzionalità",
+    "featuresDesc": "Tutto ciò di cui hai bisogno per l'avventura perfetta",
+    "featureTeamBuilder": "Costruttore di Squadre",
+    "featureRouting": "Pianificazione Percorso",
+    "featureTypeChart": "Tabella Tipi",
+    "featureMovesets": "Analisi Mosse",
+    "featureLocations": "Posizioni Pokémon"
+  },
+  "search": {
+    "title": "Ricerca Abilità di Campo Pokémon",
+    "description": "Trova Pokémon che possono imparare abilità di campo specifiche (MN) nel tuo gioco selezionato.",
+    "backToPlanner": "Torna al Pianificatore",
+    "filters": {
+      "title": "Filtri di Ricerca",
+      "description": "Seleziona un gioco e applica filtri per trovare Pokémon.",
+      "game": "Gioco",
+      "gamePlaceholder": "Seleziona un gioco...",
+      "fieldSkills": "Abilità di Campo (MN)",
+      "fieldSkillsPlaceholder": "Seleziona abilità di campo...",
+      "types": "Tipi (filtro O)",
+      "typesPlaceholder": "Seleziona fino a 2 tipi...",
+      "includeTradeEvolutions": "Includi Pokémon che evolvono solo tramite scambio",
+      "search": "Cerca Pokémon",
+      "searching": "Ricerca in corso..."
+    },
+    "results": {
+      "title": "Risultati",
+      "count": "{{count}} Pokémon trovati"
+    },
+    "loading": "Caricamento Pokémon...",
+    "error": "Errore",
+    "noResults": "Nessun Pokémon trovato corrispondente ai tuoi filtri.",
+    "types": {
+      "normal": "Normale",
+      "fire": "Fuoco",
+      "water": "Acqua",
+      "electric": "Elettro",
+      "grass": "Erba",
+      "ice": "Ghiaccio",
+      "fighting": "Lotta",
+      "poison": "Veleno",
+      "ground": "Terra",
+      "flying": "Volante",
+      "psychic": "Psico",
+      "bug": "Coleottero",
+      "rock": "Roccia",
+      "ghost": "Spettro",
+      "dragon": "Drago",
+      "dark": "Buio",
+      "steel": "Acciaio",
+      "fairy": "Folletto"
+    },
+    "addToTeam": "Aggiungi alla squadra"
+  },
+  "games": {
+    "red-jp": "Pokémon Rosso (JP)",
+    "green-jp": "Pokémon Verde (JP)",
+    "blue-jp": "Pokémon Blu (JP)",
+    "red": "Pokémon Rosso",
+    "blue": "Pokémon Blu",
+    "yellow": "Pokémon Giallo",
+    "gold": "Pokémon Oro",
+    "silver": "Pokémon Argento",
+    "crystal": "Pokémon Cristallo",
+    "ruby": "Pokémon Rubino",
+    "sapphire": "Pokémon Zaffiro",
+    "emerald": "Pokémon Smeraldo",
+    "firered": "Pokémon Rosso Fuoco",
+    "leafgreen": "Pokémon Verde Foglia",
+    "diamond": "Pokémon Diamante",
+    "pearl": "Pokémon Perla",
+    "platinum": "Pokémon Platino",
+    "heartgold": "Pokémon Oro HeartGold",
+    "soulsilver": "Pokémon Argento SoulSilver",
+    "black": "Pokémon Nero",
+    "white": "Pokémon Bianco",
+    "black-2": "Pokémon Nero 2",
+    "white-2": "Pokémon Bianco 2"
+  },
+  "fieldSkills": {
+    "cut": "Taglio",
+    "fly": "Volo",
+    "surf": "Surf",
+    "strength": "Forza",
+    "flash": "Flash",
+    "whirlpool": "Mulinello",
+    "waterfall": "Cascata",
+    "rock-smash": "Spaccaroccia",
+    "headbutt": "Bottintesta",
+    "dive": "Sub",
+    "rock-climb": "Scalaroccia",
+    "defog": "Scacciabruma",
+    "dig": "Fossa",
+    "teleport": "Teletrasporto",
+    "sweet-scent": "Profumino",
+    "milk-drink": "Buonlatte",
+    "softboiled": "Covauova"
+  },
+  "pokemonCard": {
+    "trade": "Scambio",
+    "fieldSkills": "Abilità di Campo",
+    "noSkills": "Nessuna abilità di campo",
+    "stats": {
+      "hp": "PS",
+      "atk": "ATT",
+      "def": "DIF",
+      "spAtk": "AT.S",
+      "spDef": "DF.S",
+      "spd": "VEL"
+    }
   }
 }

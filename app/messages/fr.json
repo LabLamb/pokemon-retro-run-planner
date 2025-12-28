@@ -1,14 +1,156 @@
 {
   "welcome": {
     "title": "Bienvenue au Planificateur Pokémon Rétro",
-    "description": "Planifiez votre aventure Pokémon rétro parfaite",
-    "getStarted": "Commencer",
+    "description": "Planifiez votre aventure Pokémon rétro parfaite",    "longDescription": "Cette application web vous aide à planifier vos parties de jeux Pokémon rétro en fournissant des outils pour rechercher des Pokémon avec des compétences de terrain spécifiques, construire des équipes optimales et élaborer des stratégies pour votre aventure à travers les jeux Pokémon classiques.",
+    "goToPlanner": "Aller au Planificateur",    "getStarted": "Commencer",
     "learnMore": "En Savoir Plus"
   },
   "nav": {
     "home": "Accueil",
     "planner": "Planificateur",
     "pokemon": "Pokémon",
-    "about": "À Propos"
+    "about": "À Propos"  },
+  "locale": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "ja": "日本語",
+    "ko": "한국어",
+    "pt": "Português",
+    "zh-Hans": "简体中文",
+    "zh-Hant": "繁體中文"
+  },
+  "team": {
+    "label": "Votre Équipe",
+    "emptySlot": "Vide",
+    "clearButton": "Effacer l'Équipe",
+    "clearConfirmTitle": "Effacer l'Équipe ?",
+    "clearConfirmDescription": "Êtes-vous sûr de vouloir effacer toute votre équipe ? Cette action ne peut pas être annulée.",
+    "clearConfirmCancel": "Annuler",
+    "clearConfirmConfirm": "Effacer l'Équipe"
+  },
+  "planner": {
+    "title": "Planificateur d'Aventure Pokémon Rétro",
+    "tools": {
+      "title": "Outils de Planification",
+      "description": "Choisissez un outil pour planifier votre aventure Pokémon parfaite",
+      "available": "Disponible",
+      "comingSoon": "Bientôt disponible",
+      "open": "Ouvrir l'Outil",
+      "moreTools": "Plus d'Outils",
+      "moreToolsDescription": "Constructeur d'équipe, planificateur de route et plus à venir !",
+      "fieldMovesSearch": {
+        "title": "Recherche de Compétences de Terrain",
+        "description": "Trouvez des Pokémon capables d'apprendre des CS et des capacités de terrain spécifiques pour votre aventure"
+      }
+    },
+    "features": "Fonctionnalités",
+    "featuresDesc": "Tout ce dont vous avez besoin pour l'aventure parfaite",
+    "featureTeamBuilder": "Constructeur d'Équipe",
+    "featureRouting": "Planification d'Itinéraire",
+    "featureTypeChart": "Tableau des Types",
+    "featureMovesets": "Analyse des Capacités",
+    "featureLocations": "Emplacements des Pokémon"
+  },
+  "search": {
+    "title": "Recherche de Compétences de Terrain Pokémon",
+    "description": "Trouvez des Pokémon qui peuvent apprendre des compétences de terrain spécifiques (CS) dans votre jeu sélectionné.",    "backToPlanner": "Retour au Planificateur",    "filters": {
+      "title": "Filtres de Recherche",
+      "description": "Sélectionnez un jeu et appliquez des filtres pour trouver des Pokémon.",
+      "game": "Jeu",
+      "gamePlaceholder": "Sélectionnez un jeu...",
+      "fieldSkills": "Compétences de Terrain (CS)",
+      "fieldSkillsPlaceholder": "Sélectionnez des compétences de terrain...",
+      "types": "Types (filtre OU)",
+      "typesPlaceholder": "Sélectionnez jusqu'à 2 types...",
+      "includeTradeEvolutions": "Inclure les Pokémon qui n'évoluent que par échange"
+    },
+    "results": {
+      "title": "Résultats",
+      "count": "{{count}} Pokémon trouvés"
+    },
+    "loading": "Chargement des Pokémon...",
+    "error": "Erreur",
+    "noResults": "Aucun Pokémon trouvé correspondant à vos filtres.",
+    "types": {
+      "normal": "Normal",
+      "fire": "Feu",
+      "water": "Eau",
+      "electric": "Électrik",
+      "grass": "Plante",
+      "ice": "Glace",
+      "fighting": "Combat",
+      "poison": "Poison",
+      "ground": "Sol",
+      "flying": "Vol",
+      "psychic": "Psy",
+      "bug": "Insecte",
+      "rock": "Roche",
+      "ghost": "Spectre",
+      "dragon": "Dragon",
+      "dark": "Ténèbres",
+      "steel": "Acier",
+      "fairy": "Fée"
+    },
+    "addToTeam": "Ajouter à l'équipe"
+  },
+  "games": {
+    "red-jp": "Pokémon Rouge (JP)",
+    "green-jp": "Pokémon Vert (JP)",
+    "blue-jp": "Pokémon Bleu (JP)",
+    "red": "Pokémon Rouge",
+    "blue": "Pokémon Bleu",
+    "yellow": "Pokémon Jaune",
+    "gold": "Pokémon Or",
+    "silver": "Pokémon Argent",
+    "crystal": "Pokémon Cristal",
+    "ruby": "Pokémon Rubis",
+    "sapphire": "Pokémon Saphir",
+    "emerald": "Pokémon Émeraude",
+    "firered": "Pokémon Rouge Feu",
+    "leafgreen": "Pokémon Vert Feuille",
+    "diamond": "Pokémon Diamant",
+    "pearl": "Pokémon Perle",
+    "platinum": "Pokémon Platine",
+    "heartgold": "Pokémon Or HeartGold",
+    "soulsilver": "Pokémon Argent SoulSilver",
+    "black": "Pokémon Noir",
+    "white": "Pokémon Blanc",
+    "black-2": "Pokémon Noir 2",
+    "white-2": "Pokémon Blanc 2"
+  },
+  "fieldSkills": {
+    "cut": "Coupe",
+    "fly": "Vol",
+    "surf": "Surf",
+    "strength": "Force",
+    "flash": "Flash",
+    "whirlpool": "Siphon",
+    "waterfall": "Cascade",
+    "rock-smash": "Éclate-Roc",
+    "headbutt": "Coup d'Boule",
+    "dive": "Plongée",
+    "rock-climb": "Escalade",
+    "defog": "Anti-Brume",
+    "dig": "Tunnel",
+    "teleport": "Téléport",
+    "sweet-scent": "Doux Parfum",
+    "milk-drink": "Lait à Boire",
+    "softboiled": "E-Coque"
+  },
+  "pokemonCard": {
+    "trade": "Échange",
+    "fieldSkills": "Compétences de Terrain",
+    "noSkills": "Aucune compétence de terrain",
+    "stats": {
+      "hp": "PV",
+      "atk": "ATQ",
+      "def": "DÉF",
+      "spAtk": "AT.S",
+      "spDef": "DF.S",
+      "spd": "VIT"
+    }
   }
 }

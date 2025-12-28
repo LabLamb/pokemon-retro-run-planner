@@ -2,6 +2,8 @@
   "welcome": {
     "title": "포켓몬 레트로 런 플래너에 오신 것을 환영합니다",
     "description": "완벽한 레트로 포켓몬 모험을 계획하세요",
+    "longDescription": "이 웹 애플리케이션은 특정 필드 스킬을 가진 포켓몬을 검색하고, 최적의 팀을 구성하며, 클래식 포켓몬 게임을 통한 모험을 전략화하는 도구를 제공하여 레트로 포켓몬 게임 플레이를 계획하는 데 도움을 줍니다.",
+    "goToPlanner": "플래너로 이동",
     "getStarted": "시작하기",
     "learnMore": "자세히 알아보기"
   },
@@ -9,6 +11,146 @@
     "home": "홈",
     "planner": "플래너",
     "pokemon": "포켓몬",
-    "about": "정보"
+    "about": "정보"  },
+  "locale": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "ja": "日本語",
+    "ko": "한국어",
+    "pt": "Português",
+    "zh-Hans": "简体中文",
+    "zh-Hant": "繁體中文"
+  },  "team": {
+    "label": "당신의 팀",
+    "emptySlot": "비어있음",
+    "clearButton": "팀 지우기",
+    "clearConfirmTitle": "팀을 지우시겠습니까?",
+    "clearConfirmDescription": "정말로 전체 팀을 지우시겠습니까? 이 작업은 취소할 수 없습니다.",
+    "clearConfirmCancel": "취소",
+    "clearConfirmConfirm": "팀 지우기"
+  },  "planner": {
+    "title": "포켓몬 레트로 모험 플래너",
+    "tools": {
+      "title": "계획 도구",
+      "description": "완벽한 포켓몬 모험을 계획하기 위한 도구를 선택하세요",
+      "available": "사용 가능",
+      "comingSoon": "곧 출시",
+      "open": "도구 열기",
+      "moreTools": "더 많은 도구",
+      "moreToolsDescription": "팀 빌더, 루트 플래너 등이 곧 출시됩니다!",
+      "fieldMovesSearch": {
+        "title": "필드 스킬 검색",
+        "description": "모험에 필요한 특정 비전머신과 필드 기술을 배울 수 있는 포켓몬을 찾아보세요"
+      }
+    },
+    "features": "기능",
+    "featuresDesc": "완벽한 모험에 필요한 모든 것",
+    "featureTeamBuilder": "팀 빌더",
+    "featureRouting": "루트 계획",
+    "featureTypeChart": "타입 상성표",
+    "featureMovesets": "기술 분석",
+    "featureLocations": "포켓몬 위치"
+  },
+  "search": {
+    "title": "포켓몬 필드 스킬 검색",
+    "description": "선택한 게임에서 특정 필드 스킬(비전머신)을 배울 수 있는 포켓몬을 찾으세요.",    "backToPlanner": "플래너로 돌아가기",    "filters": {
+      "title": "검색 필터",
+      "description": "게임을 선택하고 필터를 적용하여 포켓몬을 찾으세요.",
+      "game": "게임",
+      "gamePlaceholder": "게임 선택...",
+      "fieldSkills": "필드 스킬 (비전머신)",
+      "fieldSkillsPlaceholder": "필드 스킬 선택...",
+      "types": "타입 (OR 필터)",
+      "typesPlaceholder": "최대 2개 타입 선택...",
+      "includeTradeEvolutions": "통신 진화만 가능한 포켓몬 포함"
+    },
+    "results": {
+      "title": "결과",
+      "count": "{{count}}마리의 포켓몬을 찾았습니다"
+    },
+    "loading": "포켓몬 로딩 중...",
+    "error": "오류",
+    "noResults": "필터와 일치하는 포켓몬을 찾을 수 없습니다.",
+    "types": {
+      "normal": "노말",
+      "fire": "불꽃",
+      "water": "물",
+      "electric": "전기",
+      "grass": "풀",
+      "ice": "얼음",
+      "fighting": "격투",
+      "poison": "독",
+      "ground": "땅",
+      "flying": "비행",
+      "psychic": "에스퍼",
+      "bug": "벌레",
+      "rock": "바위",
+      "ghost": "고스트",
+      "dragon": "드래곤",
+      "dark": "악",
+      "steel": "강철",
+      "fairy": "페어리"
+    },
+    "addToTeam": "팀에 추가"
+  },
+  "games": {
+    "red-jp": "포켓몬스터 레드 (JP)",
+    "green-jp": "포켓몬스터 그린 (JP)",
+    "blue-jp": "포켓몬스터 블루 (JP)",
+    "red": "포켓몬스터 레드",
+    "blue": "포켓몬스터 블루",
+    "yellow": "포켓몬스터 피카츄",
+    "gold": "포켓몬스터 골드",
+    "silver": "포켓몬스터 실버",
+    "crystal": "포켓몬스터 크리스탈",
+    "ruby": "포켓몬스터 루비",
+    "sapphire": "포켓몬스터 사파이어",
+    "emerald": "포켓몬스터 에메랄드",
+    "firered": "포켓몬스터 파이어레드",
+    "leafgreen": "포켓몬스터 리프그린",
+    "diamond": "포켓몬스터 다이아몬드",
+    "pearl": "포켓몬스터 펄",
+    "platinum": "포켓몬스터 플라티나",
+    "heartgold": "포켓몬스터 하트골드",
+    "soulsilver": "포켓몬스터 소울실버",
+    "black": "포켓몬스터 블랙",
+    "white": "포켓몬스터 화이트",
+    "black-2": "포켓몬스터 블랙 2",
+    "white-2": "포켓몬스터 화이트 2"
+  },
+  "fieldSkills": {
+    "cut": "비밀기계찌기",
+    "fly": "비밀기계날기",
+    "surf": "비밀기계파도타기",
+    "strength": "비밀기계괴력",
+    "flash": "비밀기계플래시",
+    "whirlpool": "비밀기계소용돌이",
+    "waterfall": "비밀기계폭포오르기",
+    "rock-smash": "비밀기계바위깨기",
+    "headbutt": "박치기",
+    "dive": "비밀기계다이빙",
+    "rock-climb": "비밀기계록클라임",
+    "defog": "비밀기계안개제거",
+    "dig": "때파기",
+    "teleport": "순간이동",
+    "sweet-scent": "달콤한향기",
+    "milk-drink": "우유마시기",
+    "softboiled": "알낳기"
+  },
+  "pokemonCard": {
+    "trade": "통신교환",
+    "fieldSkills": "필드 스킬",
+    "noSkills": "필드 스킬 없음",
+    "stats": {
+      "hp": "HP",
+      "atk": "공격",
+      "def": "방어",
+      "spAtk": "특공",
+      "spDef": "특방",
+      "spd": "스피드"
+    }
   }
 }

@@ -12,7 +12,8 @@ import "./app.css";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./lib/i18n";
 import { ThemeProvider } from "./lib/theme-provider";
-import { LocaleProvider } from "./lib/locale-provider";
+import { QueryProvider } from "./lib/query-provider";
+import { TeamProvider } from "./lib/team-provider";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -38,9 +39,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <ThemeProvider>
-          <I18nextProvider i18n={i18n}>
-            <LocaleProvider>{children}</LocaleProvider>
-          </I18nextProvider>
+          <QueryProvider>
+            <I18nextProvider i18n={i18n}>
+              <TeamProvider>
+                {children}
+              </TeamProvider>
+            </I18nextProvider>
+          </QueryProvider>
         </ThemeProvider>
         <ScrollRestoration />
         <Scripts />

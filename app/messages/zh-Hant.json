@@ -2,6 +2,8 @@
   "welcome": {
     "title": "歡迎來到寶可夢復古跑步規劃器",
     "description": "規劃您完美的復古寶可夢冒險",
+    "longDescription": "此Web應用程式透過提供工具來搜尋具有特定場地技能的寶可夢、構建最佳團隊以及制定經典寶可夢遊戲冒險策略，幫助您規劃復古寶可夢遊戲的遊玩。",
+    "goToPlanner": "前往規劃器",
     "getStarted": "開始",
     "learnMore": "了解更多"
   },
@@ -10,5 +12,150 @@
     "planner": "規劃器",
     "pokemon": "寶可夢",
     "about": "關於"
+  },
+  "locale": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "ja": "日本語",
+    "ko": "한국어",
+    "pt": "Português",
+    "zh-Hans": "简体中文",
+    "zh-Hant": "繁體中文"
+  },  "team": {
+    "label": "你的隊伍",
+    "emptySlot": "空",
+    "clearButton": "清空隊伍",
+    "clearConfirmTitle": "清空隊伍？",
+    "clearConfirmDescription": "您確定要清空整個隊伍嗎？此操作無法撤銷。",
+    "clearConfirmCancel": "取消",
+    "clearConfirmConfirm": "清空隊伍"
+  },
+  "planner": {
+    "title": "寶可夢復古冒險規劃器",
+    "tools": {
+      "title": "規劃工具",
+      "description": "選擇一個工具來規劃您完美的寶可夢冒險",
+      "available": "可用",
+      "comingSoon": "即將推出",
+      "open": "開啟工具",
+      "moreTools": "更多工具",
+      "moreToolsDescription": "隊伍建構器、路線規劃器等即將推出！",
+      "fieldMovesSearch": {
+        "title": "場地技能搜尋",
+        "description": "尋找可以學習特定秘傳機和場地招式的寶可夢"
+      }
+    },
+    "features": "功能",
+    "featuresDesc": "完美冒險所需的一切",
+    "featureTeamBuilder": "隊伍建構器",
+    "featureRouting": "路線規劃",
+    "featureTypeChart": "屬性相剋表",
+    "featureMovesets": "招式分析",
+    "featureLocations": "寶可夢位置"
+  },  "search": {
+    "title": "寶可夢場地技能搜尋",
+    "description": "在您選擇的遊戲中尋找可以學習特定場地技能（秘傳機）的寶可夢。",
+    "backToPlanner": "返回規劃器",
+    "filters": {
+      "title": "搜尋篩選器",
+      "description": "選擇遊戲並套用篩選器以尋找寶可夢。",
+      "game": "遊戲",
+      "gamePlaceholder": "選擇遊戲...",
+      "fieldSkills": "場地技能（秘傳機）",
+      "fieldSkillsPlaceholder": "選擇場地技能...",
+      "types": "屬性（或篩選器）",
+      "typesPlaceholder": "最多選擇2個屬性...",
+      "includeTradeEvolutions": "包括僅透過交換進化的寶可夢",
+      "search": "搜尋寶可夢",
+      "searching": "搜尋中..."
+    },
+    "results": {
+      "title": "結果",
+      "count": "找到{{count}}隻寶可夢"
+    },
+    "loading": "正在載入寶可夢...",
+    "error": "錯誤",
+    "noResults": "未找到與您的篩選器相符的寶可夢。",
+    "types": {
+      "normal": "一般",
+      "fire": "火",
+      "water": "水",
+      "electric": "電",
+      "grass": "草",
+      "ice": "冰",
+      "fighting": "格鬥",
+      "poison": "毒",
+      "ground": "地面",
+      "flying": "飛行",
+      "psychic": "超能力",
+      "bug": "蟲",
+      "rock": "岩石",
+      "ghost": "幽靈",
+      "dragon": "龍",
+      "dark": "惡",
+      "steel": "鋼",
+      "fairy": "妖精"
+    },
+    "addToTeam": "加入隊伍"
+  },
+  "games": {
+    "red-jp": "精靈寶可夢 紅 (JP)",
+    "green-jp": "精靈寶可夢 綠 (JP)",
+    "blue-jp": "精靈寶可夢 藍 (JP)",
+    "red": "寶可夢 紅",
+    "blue": "寶可夢 藍",
+    "yellow": "寶可夢 黃",
+    "gold": "寶可夢 金",
+    "silver": "寶可夢 銀",
+    "crystal": "寶可夢 水晶",
+    "ruby": "寶可夢 紅寶石",
+    "sapphire": "寶可夢 藍寶石",
+    "emerald": "寶可夢 綠寶石",
+    "firered": "寶可夢 火紅",
+    "leafgreen": "寶可夢 葉綠",
+    "diamond": "寶可夢 鑽石",
+    "pearl": "寶可夢 珍珠",
+    "platinum": "寶可夢 白金",
+    "heartgold": "寶可夢 心金",
+    "soulsilver": "寶可夢 魂銀",
+    "black": "寶可夢 黑",
+    "white": "寶可夢 白",
+    "black-2": "寶可夢 黑 2",
+    "white-2": "寶可夢 白 2"
+  },
+  "fieldSkills": {
+    "cut": "居合斬",
+    "fly": "飛翔",
+    "surf": "衝浪",
+    "strength": "怪力",
+    "flash": "閃光",
+    "whirlpool": "漩渦",
+    "waterfall": "攀瀑",
+    "rock-smash": "碎岩",
+    "headbutt": "頭錘",
+    "dive": "潛水",
+    "rock-climb": "攀岩",
+    "defog": "清除濃霧",
+    "dig": "挖洞",
+    "teleport": "瞬間移動",
+    "sweet-scent": "甘美香氣",
+    "milk-drink": "喝牛奶",
+    "softboiled": "生蛋"
+  },
+  "pokemonCard": {
+    "trade": "通訊交換",
+    "fieldSkills": "場地技能",
+    "noSkills": "無場地技能",
+    "stats": {
+      "hp": "HP",
+      "atk": "攻擊",
+      "def": "防禦",
+      "spAtk": "特攻",
+      "spDef": "特防",
+      "spd": "速度"
+    }
   }
 }

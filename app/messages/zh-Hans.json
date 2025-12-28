@@ -2,6 +2,8 @@
   "welcome": {
     "title": "欢迎来到宝可梦复古跑步规划器",
     "description": "规划您完美的复古宝可梦冒险",
+    "longDescription": "此Web应用程序通过提供工具来搜索具有特定场地技能的宝可梦、构建最佳团队以及制定经典宝可梦游戏冒险策略，帮助您规划复古宝可梦游戏的游玩。",
+    "goToPlanner": "前往规划器",
     "getStarted": "开始",
     "learnMore": "了解更多"
   },
@@ -10,5 +12,152 @@
     "planner": "规划器",
     "pokemon": "宝可梦",
     "about": "关于"
+  },
+  "locale": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "ja": "日本語",
+    "ko": "한국어",
+    "pt": "Português",
+    "zh-Hans": "简体中文",
+    "zh-Hant": "繁體中文"
+  },
+  "team": {
+    "label": "你的队伍",
+    "emptySlot": "空",
+    "clearButton": "清空队伍",
+    "clearConfirmTitle": "清空队伍？",
+    "clearConfirmDescription": "您确定要清空整个队伍吗？此操作无法撤销。",
+    "clearConfirmCancel": "取消",
+    "clearConfirmConfirm": "清空队伍"
+  },
+  "planner": {
+    "title": "宝可梦复古冒险规划器",
+    "tools": {
+      "title": "规划工具",
+      "description": "选择一个工具来规划您完美的宝可梦冒险",
+      "available": "可用",
+      "comingSoon": "即将推出",
+      "open": "打开工具",
+      "moreTools": "更多工具",
+      "moreToolsDescription": "队伍构建器、路线规划器等即将推出！",
+      "fieldMovesSearch": {
+        "title": "场地技能搜索",
+        "description": "查找可以学习特定秘传机和场地招式的宝可梦"
+      }
+    },
+    "features": "功能",
+    "featuresDesc": "完美冒险所需的一切",
+    "featureTeamBuilder": "队伍构建器",
+    "featureRouting": "路线规划",
+    "featureTypeChart": "属性相克表",
+    "featureMovesets": "招式分析",
+    "featureLocations": "宝可梦位置"
+  },
+  "search": {
+    "title": "宝可梦场地技能搜索",
+    "description": "在您选择的游戏中查找可以学习特定场地技能（秘传机）的宝可梦。",
+    "backToPlanner": "返回规划器",
+    "filters": {
+      "title": "搜索过滤器",
+      "description": "选择游戏并应用过滤器以查找宝可梦。",
+      "game": "游戏",
+      "gamePlaceholder": "选择游戏...",
+      "fieldSkills": "场地技能（秘传机）",
+      "fieldSkillsPlaceholder": "选择场地技能...",
+      "types": "属性（或过滤器）",
+      "typesPlaceholder": "最多选择2个属性...",
+      "includeTradeEvolutions": "包括仅通过交换进化的宝可梦",
+      "search": "搜索宝可梦",
+      "searching": "搜索中..."
+    },
+    "results": {
+      "title": "结果",
+      "count": "找到{{count}}只宝可梦"
+    },
+    "loading": "正在加载宝可梦...",
+    "error": "错误",
+    "noResults": "未找到与您的过滤器匹配的宝可梦。",
+    "types": {
+      "normal": "一般",
+      "fire": "火",
+      "water": "水",
+      "electric": "电",
+      "grass": "草",
+      "ice": "冰",
+      "fighting": "格斗",
+      "poison": "毒",
+      "ground": "地面",
+      "flying": "飞行",
+      "psychic": "超能力",
+      "bug": "虫",
+      "rock": "岩石",
+      "ghost": "幽灵",
+      "dragon": "龙",
+      "dark": "恶",
+      "steel": "钢",
+      "fairy": "妖精"
+    },
+    "addToTeam": "添加到队伍"
+  },
+  "games": {
+    "red-jp": "精灵宝可梦 红 (JP)",
+    "green-jp": "精灵宝可梦 绿 (JP)",
+    "blue-jp": "精灵宝可梦 蓝 (JP)",
+    "red": "宝可梦 红",
+    "blue": "宝可梦 蓝",
+    "yellow": "宝可梦 黄",
+    "gold": "宝可梦 金",
+    "silver": "宝可梦 银",
+    "crystal": "宝可梦 水晶",
+    "ruby": "宝可梦 红宝石",
+    "sapphire": "宝可梦 蓝宝石",
+    "emerald": "宝可梦 绿宝石",
+    "firered": "宝可梦 火红",
+    "leafgreen": "宝可梦 叶绿",
+    "diamond": "宝可梦 钻石",
+    "pearl": "宝可梦 珍珠",
+    "platinum": "宝可梦 白金",
+    "heartgold": "宝可梦 心金",
+    "soulsilver": "宝可梦 魂银",
+    "black": "宝可梦 黑",
+    "white": "宝可梦 白",
+    "black-2": "宝可梦 黑 2",
+    "white-2": "宝可梦 白 2"
+  },
+  "fieldSkills": {
+    "cut": "居合斩",
+    "fly": "飞翔",
+    "surf": "冲浪",
+    "strength": "怪力",
+    "flash": "闪光",
+    "whirlpool": "漩涡",
+    "waterfall": "攀瀑",
+    "rock-smash": "碎岩",
+    "headbutt": "头锤",
+    "dive": "潜水",
+    "rock-climb": "攀岩",
+    "defog": "清除浓雾",
+    "dig": "挖洞",
+    "teleport": "瞬间移动",
+    "sweet-scent": "甘美香气",
+    "milk-drink": "喝牛奶",
+    "softboiled": "生蛋"
+  },
+  "pokemonCard": {
+    "trade": "通信交换",
+    "fieldSkills": "场地技能",
+    "noSkills": "无场地技能",
+    "stats": {
+      "hp": "HP",
+      "atk": "攻击",
+      "def": "防御",
+      "spAtk": "特攻",
+      "spDef": "特防",
+      "spd": "速度"
+    }
   }
 }

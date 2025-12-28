@@ -2,6 +2,8 @@
   "welcome": {
     "title": "Welcome to Pokémon Retro Run Planner",
     "description": "Plan your perfect retro Pokémon adventure",
+    "longDescription": "This web application helps you plan your retro Pokémon game runs by providing tools to search for Pokémon with specific field skills, build optimal teams, and strategize your adventure through classic Pokémon games.",
+    "goToPlanner": "Go to Planner",
     "getStarted": "Get Started",
     "learnMore": "Learn More"
   },
@@ -10,5 +12,152 @@
     "planner": "Planner",
     "pokemon": "Pokémon",
     "about": "About"
+  },
+  "locale": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "ja": "日本語",
+    "ko": "한국어",
+    "pt": "Português",
+    "zh-Hans": "简体中文",
+    "zh-Hant": "繁體中文"
+  },
+  "team": {
+    "label": "Your Team",
+    "emptySlot": "Empty",
+    "clearButton": "Clear Team",
+    "clearConfirmTitle": "Clear Team?",
+    "clearConfirmDescription": "Are you sure you want to clear your entire team? This action cannot be undone.",
+    "clearConfirmCancel": "Cancel",
+    "clearConfirmConfirm": "Clear Team"
+  },
+  "planner": {
+    "title": "Pokémon Retro Run Planner",
+    "tools": {
+      "title": "Planning Tools",
+      "description": "Choose a tool to help plan your perfect Pokémon run",
+      "available": "Available",
+      "comingSoon": "Coming Soon",
+      "open": "Open Tool",
+      "moreTools": "More Tools",
+      "moreToolsDescription": "Team builder, route planner, and more coming soon!",
+      "fieldMovesSearch": {
+        "title": "Field Skills Search",
+        "description": "Find Pokémon that can learn specific HMs and field moves for your adventure"
+      }
+    },
+    "features": "Features",
+    "featuresDesc": "Everything you need for the perfect run",
+    "featureTeamBuilder": "Team Builder",
+    "featureRouting": "Route Planning",
+    "featureTypeChart": "Type Chart",
+    "featureMovesets": "Moveset Analysis",
+    "featureLocations": "Pokémon Locations"
+  },
+  "search": {
+    "title": "Pokémon Field Skills Search",
+    "description": "Find Pokémon that can learn specific field skills (HMs) in your selected game.",
+    "backToPlanner": "Back to Planner",
+    "filters": {
+      "title": "Search Filters",
+      "description": "Select a game and apply filters to find Pokémon.",
+      "game": "Game",
+      "gamePlaceholder": "Select a game...",
+      "fieldSkills": "Field Skills (HMs)",
+      "fieldSkillsPlaceholder": "Select field skills...",
+      "types": "Types (OR filter)",
+      "typesPlaceholder": "Select up to 2 types...",
+      "includeTradeEvolutions": "Include trade-evolution-only Pokémon",
+      "search": "Search Pokémon",
+      "searching": "Searching..."
+    },
+    "results": {
+      "title": "Results",
+      "count": "{{count}} Pokémon found"
+    },
+    "loading": "Loading Pokémon...",
+    "error": "Error",
+    "noResults": "No Pokémon found matching your filters.",
+    "types": {
+      "normal": "Normal",
+      "fire": "Fire",
+      "water": "Water",
+      "electric": "Electric",
+      "grass": "Grass",
+      "ice": "Ice",
+      "fighting": "Fighting",
+      "poison": "Poison",
+      "ground": "Ground",
+      "flying": "Flying",
+      "psychic": "Psychic",
+      "bug": "Bug",
+      "rock": "Rock",
+      "ghost": "Ghost",
+      "dragon": "Dragon",
+      "dark": "Dark",
+      "steel": "Steel",
+      "fairy": "Fairy"
+    },
+    "addToTeam": "Add to Team"
+  },
+  "games": {
+    "red-jp": "Pokémon Red (JP)",
+    "green-jp": "Pokémon Green (JP)",
+    "blue-jp": "Pokémon Blue (JP)",
+    "red": "Pokémon Red",
+    "blue": "Pokémon Blue",
+    "yellow": "Pokémon Yellow",
+    "gold": "Pokémon Gold",
+    "silver": "Pokémon Silver",
+    "crystal": "Pokémon Crystal",
+    "ruby": "Pokémon Ruby",
+    "sapphire": "Pokémon Sapphire",
+    "emerald": "Pokémon Emerald",
+    "firered": "Pokémon FireRed",
+    "leafgreen": "Pokémon LeafGreen",
+    "diamond": "Pokémon Diamond",
+    "pearl": "Pokémon Pearl",
+    "platinum": "Pokémon Platinum",
+    "heartgold": "Pokémon HeartGold",
+    "soulsilver": "Pokémon SoulSilver",
+    "black": "Pokémon Black",
+    "white": "Pokémon White",
+    "black-2": "Pokémon Black 2",
+    "white-2": "Pokémon White 2"
+  },
+  "fieldSkills": {
+    "cut": "Cut",
+    "fly": "Fly",
+    "surf": "Surf",
+    "strength": "Strength",
+    "flash": "Flash",
+    "whirlpool": "Whirlpool",
+    "waterfall": "Waterfall",
+    "rock-smash": "Rock Smash",
+    "headbutt": "Headbutt",
+    "dive": "Dive",
+    "rock-climb": "Rock Climb",
+    "defog": "Defog",
+    "dig": "Dig",
+    "teleport": "Teleport",
+    "sweet-scent": "Sweet Scent",
+    "milk-drink": "Milk Drink",
+    "softboiled": "Softboiled"
+  },
+  "pokemonCard": {
+    "trade": "Trade",
+    "fieldSkills": "Field Skills",
+    "noSkills": "No field skills",
+    "stats": {
+      "hp": "HP",
+      "atk": "ATK",
+      "def": "DEF",
+      "spAtk": "SP.A",
+      "spDef": "SP.D",
+      "spd": "SPD"
+    }
   }
 }

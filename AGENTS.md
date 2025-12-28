@@ -98,6 +98,12 @@ yarn typecheck  # Generate route types + TypeScript check
 - Route logic should be tested
 - **Skip**: SSG prerendered pages (e.g., `$locale._index.tsx`)
 
+We focus exclusively on unit tests. This includes UI component tests that validate rendering and UI logic, business logic function tests, more complex hook tests, and service/adapter tests.
+
+Only 100% test coverage is acceptable; adjust the scope to ensure every relevant unit is covered by tests.
+
+All unit tests are executed with Vitest, complemented by Testing Library helpers and `@testing-library/jest-dom` matchers for UI assertions.
+
 ## Code Conventions
 
 ### File Organization

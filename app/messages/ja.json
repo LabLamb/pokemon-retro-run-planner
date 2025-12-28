@@ -1,14 +1,154 @@
 {
   "welcome": {
     "title": "ポケモンレトロランプランナーへようこそ",
-    "description": "完璧なレトロポケモンアドベンチャーを計画しよう",
-    "getStarted": "始める",
+    "description": "完璧なレトロポケモンアドベンチャーを計画しよう",    "longDescription": "このWebアプリケーションは、特定のフィールドスキルを持つポケモンを検索し、最適なチームを構築し、クラシックポケモンゲームでの冒険を戦略化するツールを提供することで、レトロポケモンゲームのプレイを計画するのに役立ちます。",
+    "goToPlanner": "プランナーへ",    "getStarted": "始める",
     "learnMore": "詳細を見る"
   },
   "nav": {
     "home": "ホーム",
     "planner": "プランナー",
     "pokemon": "ポケモン",
-    "about": "について"
+    "about": "について"  },
+  "locale": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "ja": "日本語",
+    "ko": "한국어",
+    "pt": "Português",
+    "zh-Hans": "简体中文",
+    "zh-Hant": "繁體中文"
+  },  "team": {
+    "label": "あなたのチーム",
+    "emptySlot": "空",
+    "clearButton": "チームをクリア",
+    "clearConfirmTitle": "チームをクリアしますか？",
+    "clearConfirmDescription": "本当にチーム全体をクリアしますか？この操作は元に戻せません。",
+    "clearConfirmCancel": "キャンセル",
+    "clearConfirmConfirm": "チームをクリア"
+  },  "planner": {
+    "title": "ポケモンレトロ冒険プランナー",
+    "tools": {
+      "title": "計画ツール",
+      "description": "完璧なポケモン冒険を計画するためのツールを選択してください",
+      "available": "利用可能",
+      "comingSoon": "近日公開",
+      "open": "ツールを開く",
+      "moreTools": "その他のツール",
+      "moreToolsDescription": "チームビルダー、ルートプランナーなど、近日公開予定！",
+      "fieldMovesSearch": {
+        "title": "フィールドスキル検索",
+        "description": "冒険に必要な特定のひでんマシンやフィールド技を覚えられるポケモンを見つけよう"
+      }
+    },
+    "features": "機能",
+    "featuresDesc": "完璧な冒険に必要なすべて",
+    "featureTeamBuilder": "チームビルダー",
+    "featureRouting": "ルート計画",
+    "featureTypeChart": "タイプ相性表",
+    "featureMovesets": "技分析",
+    "featureLocations": "ポケモンの出現場所"
+  },
+  "search": {
+    "title": "ポケモンフィールドスキル検索",
+    "description": "選択したゲームで特定のフィールドスキル（ひでんわざ）を覚えられるポケモンを見つけよう。",    "backToPlanner": "プランナーに戻る",    "filters": {
+      "title": "検索フィルター",
+      "description": "ゲームを選択してフィルターを適用し、ポケモンを見つけよう。",
+      "game": "ゲーム",
+      "gamePlaceholder": "ゲームを選択...",
+      "fieldSkills": "フィールドスキル（ひでんわざ）",
+      "fieldSkillsPlaceholder": "フィールドスキルを選択...",
+      "types": "タイプ（OR フィルター）",
+      "typesPlaceholder": "最大2つのタイプを選択...",
+      "includeTradeEvolutions": "通信進化のみのポケモンを含める"
+    },
+    "results": {
+      "title": "結果",
+      "count": "{{count}}匹のポケモンが見つかりました"
+    },
+    "loading": "ポケモンを読み込み中...",
+    "error": "エラー",
+    "noResults": "フィルターに一致するポケモンが見つかりませんでした。",
+    "types": {
+      "normal": "ノーマル",
+      "fire": "ほのお",
+      "water": "みず",
+      "electric": "でんき",
+      "grass": "くさ",
+      "ice": "こおり",
+      "fighting": "かくとう",
+      "poison": "どく",
+      "ground": "じめん",
+      "flying": "ひこう",
+      "psychic": "エスパー",
+      "bug": "むし",
+      "rock": "いわ",
+      "ghost": "ゴースト",
+      "dragon": "ドラゴン",
+      "dark": "あく",
+      "steel": "はがね",
+      "fairy": "フェアリー"
+    },
+    "addToTeam": "チームに追加"
+  },
+  "games": {
+    "red-jp": "ポケットモンスター 赤",
+    "green-jp": "ポケットモンスター 緑",
+    "blue-jp": "ポケットモンスター 青",
+    "red": "ポケモン レッド",
+    "blue": "ポケモン ブルー",
+    "yellow": "ポケモン イエロー",
+    "gold": "ポケモン ゴールド",
+    "silver": "ポケモン シルバー",
+    "crystal": "ポケモン クリスタル",
+    "ruby": "ポケモン ルビー",
+    "sapphire": "ポケモン サファイア",
+    "emerald": "ポケモン エメラルド",
+    "firered": "ポケモン ファイアレッド",
+    "leafgreen": "ポケモン リーフグリーン",
+    "diamond": "ポケモン ダイヤモンド",
+    "pearl": "ポケモン パール",
+    "platinum": "ポケモン プラチナ",
+    "heartgold": "ポケモン ハートゴールド",
+    "soulsilver": "ポケモン ソウルシルバー",
+    "black": "ポケモン ブラック",
+    "white": "ポケモン ホワイト",
+    "black-2": "ポケモン ブラック2",
+    "white-2": "ポケモン ホワイト2"
+  },
+  "fieldSkills": {
+    "cut": "いあいぎり",
+    "fly": "そらをとぶ",
+    "surf": "なみのり",
+    "strength": "かいりき",
+    "flash": "フラッシュ",
+    "whirlpool": "うずしお",
+    "waterfall": "たきのぼり",
+    "rock-smash": "いわくだき",
+    "headbutt": "ずつき",
+    "dive": "ダイビング",
+    "rock-climb": "ロッククライム",
+    "defog": "きりばらい",
+    "dig": "あなをほる",
+    "teleport": "テレポート",
+    "sweet-scent": "あまいかおり",
+    "milk-drink": "ミルクのみ",
+    "softboiled": "タマゴうみ"
+  },
+  "pokemonCard": {
+    "trade": "通信交換",
+    "fieldSkills": "フィールドスキル",
+    "noSkills": "フィールドスキルなし",
+    "stats": {
+      "hp": "HP",
+      "atk": "攻撃",
+      "def": "防御",
+      "spAtk": "特攻",
+      "spDef": "特防",
+      "spd": "素早"
+    }
   }
 }

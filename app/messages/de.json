@@ -1,7 +1,9 @@
 {
   "welcome": {
     "title": "Willkommen beim Pokémon Retro Run Planner",
-    "description": "Plane dein perfektes Pokémon-Retro-Abenteuer",
+    "description": "plane dein perfektes Pokémon-Retro-Abenteuer",
+    "longDescription": "Diese Webanwendung hilft dir, deine Retro-Pokémon-Spieldurchläufe zu planen, indem sie Tools bereitstellt, um Pokémon mit bestimmten Feldfähigkeiten zu suchen, optimale Teams zu erstellen und dein Abenteuer durch klassische Pokémon-Spiele zu strategisieren.",
+    "goToPlanner": "Zum Planer",
     "getStarted": "Loslegen",
     "learnMore": "Mehr erfahren"
   },
@@ -10,5 +12,148 @@
     "planner": "Planer",
     "pokemon": "Pokémon",
     "about": "Über"
+  },
+  "locale": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "ja": "日本語",
+    "ko": "한국어",
+    "pt": "Português",
+    "zh-Hans": "简体中文",
+    "zh-Hant": "繁體中文"
+  },
+  "team": {
+    "label": "Dein Team",
+    "emptySlot": "Leer",
+    "clearButton": "Team Löschen",
+    "clearConfirmTitle": "Team Löschen?",
+    "clearConfirmDescription": "Bist du sicher, dass du dein gesamtes Team löschen möchtest? Diese Aktion kann nicht rückgängig gemacht werden.",
+    "clearConfirmCancel": "Abbrechen",
+    "clearConfirmConfirm": "Team Löschen"
+  },
+  "planner": {
+    "title": "Pokémon Retro-Abenteuer-Planer",
+    "tools": {
+      "title": "Planungswerkzeuge",
+      "description": "Wählen Sie ein Werkzeug, um Ihr perfektes Pokémon-Abenteuer zu planen",
+      "available": "Verfügbar",
+      "comingSoon": "Demnächst",
+      "open": "Werkzeug Öffnen",
+      "moreTools": "Weitere Werkzeuge",
+      "moreToolsDescription": "Team-Builder, Routenplaner und mehr kommen bald!",
+      "fieldMovesSearch": {
+        "title": "Feldfertigkeiten-Suche",
+        "description": "Finden Sie Pokémon, die bestimmte VMs und Feldfähigkeiten für Ihr Abenteuer erlernen können"
+      }
+    },
+    "features": "Funktionen",
+    "featuresDesc": "Alles, was Sie für das perfekte Abenteuer brauchen",
+    "featureTeamBuilder": "Team-Builder",
+    "featureRouting": "Routenplanung",
+    "featureTypeChart": "Typen-Tabelle",
+    "featureMovesets": "Attacken-Analyse",
+    "featureLocations": "Pokémon-Fundorte"
+  },
+  "search": {
+    "title": "Pokémon Feldfähigkeiten-Suche",
+    "description": "Finde Pokémon, die bestimmte Feldfähigkeiten (VMs) in deinem ausgewählten Spiel erlernen können.",    "backToPlanner": "Zurück zum Planer",    "filters": {
+      "title": "Suchfilter",
+      "description": "Wähle ein Spiel aus und wende Filter an, um Pokémon zu finden.",
+      "game": "Spiel",
+      "gamePlaceholder": "Wähle ein Spiel...",
+      "fieldSkills": "Feldfähigkeiten (VMs)",
+      "fieldSkillsPlaceholder": "Wähle Feldfähigkeiten...",
+      "types": "Typen (ODER-Filter)",
+      "typesPlaceholder": "Wähle bis zu 2 Typen...",
+      "includeTradeEvolutions": "Pokémon einschließen, die nur durch Tausch entwickeln"
+    },
+    "results": {
+      "title": "Ergebnisse",
+      "count": "{{count}} Pokémon gefunden"
+    },
+    "loading": "Lade Pokémon...",
+    "error": "Fehler",
+    "noResults": "Keine Pokémon gefunden, die deinen Filtern entsprechen.",
+    "types": {
+      "normal": "Normal",
+      "fire": "Feuer",
+      "water": "Wasser",
+      "electric": "Elektro",
+      "grass": "Pflanze",
+      "ice": "Eis",
+      "fighting": "Kampf",
+      "poison": "Gift",
+      "ground": "Boden",
+      "flying": "Flug",
+      "psychic": "Psycho",
+      "bug": "Käfer",
+      "rock": "Gestein",
+      "ghost": "Geist",
+      "dragon": "Drache",
+      "dark": "Unlicht",
+      "steel": "Stahl",
+      "fairy": "Fee"
+    },
+    "addToTeam": "Zum Team hinzufügen"
+  },
+  "games": {
+    "red-jp": "Pokémon Rot (JP)",
+    "green-jp": "Pokémon Grün (JP)",
+    "blue-jp": "Pokémon Blau (JP)",
+    "red": "Pokémon Rot",
+    "blue": "Pokémon Blau",
+    "yellow": "Pokémon Gelb",
+    "gold": "Pokémon Gold",
+    "silver": "Pokémon Silber",
+    "crystal": "Pokémon Kristall",
+    "ruby": "Pokémon Rubin",
+    "sapphire": "Pokémon Saphir",
+    "emerald": "Pokémon Smaragd",
+    "firered": "Pokémon Feuerrot",
+    "leafgreen": "Pokémon Blattgrün",
+    "diamond": "Pokémon Diamant",
+    "pearl": "Pokémon Perle",
+    "platinum": "Pokémon Platin",
+    "heartgold": "Pokémon HeartGold",
+    "soulsilver": "Pokémon SoulSilver",
+    "black": "Pokémon Schwarz",
+    "white": "Pokémon Weiß",
+    "black-2": "Pokémon Schwarz 2",
+    "white-2": "Pokémon Weiß 2"
+  },
+  "fieldSkills": {
+    "cut": "Zerschneider",
+    "fly": "Fliegen",
+    "surf": "Surfer",
+    "strength": "Stärke",
+    "flash": "Blitz",
+    "whirlpool": "Whirlpool",
+    "waterfall": "Kaskade",
+    "rock-smash": "Zertrümmerer",
+    "headbutt": "Kopfnuss",
+    "dive": "Taucher",
+    "rock-climb": "Kraxler",
+    "defog": "Auflockern",
+    "dig": "Schaufler",
+    "teleport": "Teleport",
+    "sweet-scent": "Lockduft",
+    "milk-drink": "Milchgetränk",
+    "softboiled": "Weichei"
+  },
+  "pokemonCard": {
+    "trade": "Tausch",
+    "fieldSkills": "Feldfähigkeiten",
+    "noSkills": "Keine Feldfähigkeiten",
+    "stats": {
+      "hp": "KP",
+      "atk": "ANG",
+      "def": "VER",
+      "spAtk": "SP.A",
+      "spDef": "SP.V",
+      "spd": "INI"
+    }
   }
 }

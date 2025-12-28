@@ -1,8 +1,7 @@
 import type { Route } from "./+types/home";
 import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import { Welcome } from "../welcome/welcome";
-import { defaultLocale } from "../lib/i18n";
+import { useNavigate } from "react-router";
+import { defaultLocale, isValidLocale } from "../lib/i18n";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -12,14 +11,22 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  const { i18n } = useTranslation();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Set language to English for the fallback page
-    if (i18n.language !== defaultLocale) {
-      i18n.changeLanguage(defaultLocale);
+    // Detect browser language or use default
+    let targetLocale = defaultLocale;
+    
+    if (typeof window !== "undefined") {
+      const browserLang = navigator.language.split("-")[0];
+      if (isValidLocale(browserLang)) {
+        targetLocale = browserLang;
+      }
     }
-  }, [i18n]);
+    
+    // Redirect to locale-prefixed path
+    navigate(`/${targetLocale}`, { replace: true });
+  }, [navigate]);
 
-  return <Welcome />;
+  return null;
 }
