@@ -1,0 +1,5 @@
+# Don't ignore the JSON data files - they should be committed
+!*.json
+
+# Keep the .gitkeep
+!.gitkeep

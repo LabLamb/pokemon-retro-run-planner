@@ -23,6 +23,7 @@ export interface PokemonCardProps {
   tradeEvolutionOnly: boolean;
   onAddToTeam?: () => void;
   addToTeamLabel?: string;
+  addedToTeamLabel?: string;
   isAddedToTeam?: boolean;
   className?: string;
 }
@@ -62,6 +63,7 @@ export function PokemonCard({
   tradeEvolutionOnly,
   onAddToTeam,
   addToTeamLabel = "Add to Team",
+  addedToTeamLabel = "Added to Team",
   isAddedToTeam = false,
   className,
 }: PokemonCardProps) {
@@ -166,7 +168,7 @@ export function PokemonCard({
               className="w-full"
               size="sm"
             >
-              {isAddedToTeam ? "Added to Team" : addToTeamLabel}
+              {isAddedToTeam ? addedToTeamLabel : addToTeamLabel}
             </Button>
           </div>
         )}

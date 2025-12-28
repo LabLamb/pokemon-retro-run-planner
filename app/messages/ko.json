@@ -94,7 +94,11 @@
       "steel": "강철",
       "fairy": "페어리"
     },
-    "addToTeam": "팀에 추가"
+    "addToTeam": "팀에 추가",
+    "addedToTeam": "팀에 추가됨"
+  },
+  "game": {
+    "selectGame": "게임 선택"
   },
   "games": {
     "red-jp": "포켓몬스터 레드 (JP)",

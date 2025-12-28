@@ -99,7 +99,11 @@
       "steel": "鋼",
       "fairy": "妖精"
     },
-    "addToTeam": "加入隊伍"
+    "addToTeam": "加入隊伍",
+    "addedToTeam": "已加入隊伍"
+  },
+  "game": {
+    "selectGame": "選擇遊戲"
   },
   "games": {
     "red-jp": "精靈寶可夢 紅 (JP)",

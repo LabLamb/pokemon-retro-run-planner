@@ -12,6 +12,7 @@ import { POKEMON_TYPES } from "~/data/pokemon-types";
 import { usePokemonSearch } from "~/hooks/use-pokemon-search";
 import { useTeam } from "~/lib/team-provider";
 import { useLocale } from "~/lib/locale-provider";
+import { useGame } from "~/lib/game-provider";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/components/ui/select";
 import { MultiSelect } from "~/components/ui/multi-select";
 import { PokemonCard } from "~/components/ui/pokemon-card";
@@ -27,23 +28,35 @@ export default function FieldMoveBasedSearchRoute() {
   const { t } = useTranslation();
   const { team, addToTeam } = useTeam();
   const { locale } = useLocale();
-  const [gameId, setGameId] = React.useState<string>("");
+  const { gameId, setGameId } = useGame();
   const [selectedHms, setSelectedHms] = React.useState<string[]>([]);
   const [selectedTypes, setSelectedTypes] = React.useState<string[]>([]);
   const [includeTradeEvoFinals, setIncludeTradeEvoFinals] = React.useState(false);
   const [triggerSearch, setTriggerSearch] = React.useState(false);
   const [hasSearched, setHasSearched] = React.useState(false);
+  
+  // Snapshot filter values when search is triggered
+  const [activeGameId, setActiveGameId] = React.useState(gameId);
+  const [activeHms, setActiveHms] = React.useState<string[]>([]);
+  const [activeTypes, setActiveTypes] = React.useState<string[]>([]);
+  const [activeIncludeTradeEvo, setActiveIncludeTradeEvo] = React.useState(false);
 
   const { pokemon, loading, error, availableHms } = usePokemonSearch({
-    gameId,
-    selectedHms,
-    selectedTypes,
-    includeTradeEvoFinals,
+    gameId: activeGameId,
+    selectedHms: activeHms,
+    selectedTypes: activeTypes,
+    includeTradeEvoFinals: activeIncludeTradeEvo,
     locale,
     triggerSearch,
   });
 
   const handleSearch = () => {
+    // Snapshot current filter values
+    setActiveGameId(gameId);
+    setActiveHms(selectedHms);
+    setActiveTypes(selectedTypes);
+    setActiveIncludeTradeEvo(includeTradeEvoFinals);
+    
     setTriggerSearch((prev) => !prev);
     setHasSearched(true);
   };
@@ -289,6 +302,7 @@ export default function FieldMoveBasedSearchRoute() {
                     tradeEvolutionOnly: p.tradeEvolutionOnly,
                   })}
                   addToTeamLabel={t("search.addToTeam", "Add to Team")}
+                  addedToTeamLabel={t("search.addedToTeam", "Added to Team")}
                   isAddedToTeam={isInTeam}
                 />
               );

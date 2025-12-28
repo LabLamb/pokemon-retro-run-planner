@@ -92,7 +92,11 @@
       "steel": "はがね",
       "fairy": "フェアリー"
     },
-    "addToTeam": "チームに追加"
+    "addToTeam": "チームに追加",
+    "addedToTeam": "チームに追加済み"
+  },
+  "game": {
+    "selectGame": "ゲームを選択"
   },
   "games": {
     "red-jp": "ポケットモンスター 赤",

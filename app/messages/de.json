@@ -97,7 +97,11 @@
       "steel": "Stahl",
       "fairy": "Fee"
     },
-    "addToTeam": "Zum Team hinzufügen"
+    "addToTeam": "Zum Team hinzufügen",
+    "addedToTeam": "Zum Team hinzugefügt"
+  },
+  "game": {
+    "selectGame": "Spiel auswählen"
   },
   "games": {
     "red-jp": "Pokémon Rot (JP)",

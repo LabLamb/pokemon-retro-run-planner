@@ -101,9 +101,11 @@
       "steel": "钢",
       "fairy": "妖精"
     },
-    "addToTeam": "添加到队伍"
-  },
-  "games": {
+    "addToTeam": "添加到队伍",
+    "addedToTeam": "已添加到队伍"
+  },  "game": {
+    "selectGame": "选择游戏"
+  },  "games": {
     "red-jp": "精灵宝可梦 红 (JP)",
     "green-jp": "精灵宝可梦 绿 (JP)",
     "blue-jp": "精灵宝可梦 蓝 (JP)",

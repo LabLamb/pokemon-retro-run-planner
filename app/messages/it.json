@@ -100,9 +100,11 @@
       "steel": "Acciaio",
       "fairy": "Folletto"
     },
-    "addToTeam": "Aggiungi alla squadra"
-  },
-  "games": {
+    "addToTeam": "Aggiungi alla squadra",
+    "addedToTeam": "Aggiunto alla squadra"
+  },  "game": {
+    "selectGame": "Seleziona Gioco"
+  },  "games": {
     "red-jp": "Pokémon Rosso (JP)",
     "green-jp": "Pokémon Verde (JP)",
     "blue-jp": "Pokémon Blu (JP)",

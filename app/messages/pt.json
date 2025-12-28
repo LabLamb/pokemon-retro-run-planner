@@ -101,9 +101,11 @@
       "steel": "Aço",
       "fairy": "Fada"
     },
-    "addToTeam": "Adicionar à equipe"
-  },
-  "games": {
+    "addToTeam": "Adicionar à equipe",
+    "addedToTeam": "Adicionado à equipe"
+  },  "game": {
+    "selectGame": "Selecionar Jogo"
+  },  "games": {
     "red-jp": "Pokémon Vermelho (JP)",
     "green-jp": "Pokémon Verde (JP)",
     "blue-jp": "Pokémon Azul (JP)",

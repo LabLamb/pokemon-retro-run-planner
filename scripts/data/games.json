@@ -1,0 +1,128 @@
+[
+  {
+    "id": "red",
+    "version": "red",
+    "pokedexId": "kanto",
+    "name": "Pokémon Red"
+  },
+  {
+    "id": "blue",
+    "version": "blue",
+    "pokedexId": "kanto",
+    "name": "Pokémon Blue"
+  },
+  {
+    "id": "green",
+    "version": "green",
+    "pokedexId": "kanto",
+    "name": "Pokémon Green (JP)"
+  },
+  {
+    "id": "yellow",
+    "version": "yellow",
+    "pokedexId": "kanto",
+    "name": "Pokémon Yellow"
+  },
+  {
+    "id": "gold",
+    "version": "gold",
+    "pokedexId": "original-johto",
+    "name": "Pokémon Gold"
+  },
+  {
+    "id": "silver",
+    "version": "silver",
+    "pokedexId": "original-johto",
+    "name": "Pokémon Silver"
+  },
+  {
+    "id": "crystal",
+    "version": "crystal",
+    "pokedexId": "original-johto",
+    "name": "Pokémon Crystal"
+  },
+  {
+    "id": "ruby",
+    "version": "ruby",
+    "pokedexId": "hoenn",
+    "name": "Pokémon Ruby"
+  },
+  {
+    "id": "sapphire",
+    "version": "sapphire",
+    "pokedexId": "hoenn",
+    "name": "Pokémon Sapphire"
+  },
+  {
+    "id": "emerald",
+    "version": "emerald",
+    "pokedexId": "hoenn",
+    "name": "Pokémon Emerald"
+  },
+  {
+    "id": "firered",
+    "version": "firered",
+    "pokedexId": "kanto",
+    "name": "Pokémon FireRed"
+  },
+  {
+    "id": "leafgreen",
+    "version": "leafgreen",
+    "pokedexId": "kanto",
+    "name": "Pokémon LeafGreen"
+  },
+  {
+    "id": "diamond",
+    "version": "diamond",
+    "pokedexId": "original-sinnoh",
+    "name": "Pokémon Diamond"
+  },
+  {
+    "id": "pearl",
+    "version": "pearl",
+    "pokedexId": "original-sinnoh",
+    "name": "Pokémon Pearl"
+  },
+  {
+    "id": "platinum",
+    "version": "platinum",
+    "pokedexId": "extended-sinnoh",
+    "name": "Pokémon Platinum"
+  },
+  {
+    "id": "heartgold",
+    "version": "heartgold",
+    "pokedexId": "updated-johto",
+    "name": "Pokémon HeartGold"
+  },
+  {
+    "id": "soulsilver",
+    "version": "soulsilver",
+    "pokedexId": "updated-johto",
+    "name": "Pokémon SoulSilver"
+  },
+  {
+    "id": "black",
+    "version": "black",
+    "pokedexId": "original-unova",
+    "name": "Pokémon Black"
+  },
+  {
+    "id": "white",
+    "version": "white",
+    "pokedexId": "original-unova",
+    "name": "Pokémon White"
+  },
+  {
+    "id": "black-2",
+    "version": "black-2",
+    "pokedexId": "updated-unova",
+    "name": "Pokémon Black 2"
+  },
+  {
+    "id": "white-2",
+    "version": "white-2",
+    "pokedexId": "updated-unova",
+    "name": "Pokémon White 2"
+  }
+]

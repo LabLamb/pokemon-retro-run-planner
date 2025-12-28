@@ -1,13 +1,15 @@
 /**
- * Global theme and locale switchers
+ * Global theme, locale, and game switchers
  * Layer 1: UI component
  */
 
 import { useTranslation } from "react-i18next";
 import { useNavigate, useLocation } from "react-router";
-import { Languages } from "lucide-react";
+import { Languages, Gamepad2 } from "lucide-react";
 import { ThemeToggle } from "~/components/ui/theme-toggle";
 import { useLocale } from "~/lib/locale-provider";
+import { useGame } from "~/lib/game-provider";
+import { GAMES } from "~/data/games";
 import { Button } from "~/components/ui/button";
 import {
   DropdownMenu,
@@ -31,11 +33,16 @@ const locales = [
 
 export function GlobalSwitchers() {
   const { locale } = useLocale();
+  const { gameId, setGameId } = useGame();
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
 
   const currentLocaleLabel = locales.find((l) => l.code === locale)?.label || "English";
+  const currentGame = GAMES.find((g) => g.id === gameId);
+  const currentGameLabel = currentGame 
+    ? t(`games.${currentGame.id}`, currentGame.name) 
+    : t("game.selectGame", "Select Game");
 
   const handleLocaleChange = (newLocale: string) => {
     // Replace the current locale in the path with the new one
@@ -50,8 +57,33 @@ export function GlobalSwitchers() {
     }
   };
 
+  const handleGameChange = (newGameId: string) => {
+    setGameId(newGameId);
+  };
+
   return (
     <div className="flex items-center gap-2">
+      {/* Game Selector */}
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button variant="outline" size="sm" className="gap-2">
+            <Gamepad2 className="h-4 w-4" />
+            <span className="hidden sm:inline">{currentGameLabel}</span>
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end" className="max-h-[400px] overflow-y-auto">
+          {GAMES.map((game) => (
+            <DropdownMenuItem
+              key={game.id}
+              onClick={() => handleGameChange(game.id)}
+              className={gameId === game.id ? "bg-accent" : ""}
+            >
+              {t(`games.${game.id}`, game.name)}
+            </DropdownMenuItem>
+          ))}
+        </DropdownMenuContent>
+      </DropdownMenu>
+
       {/* Locale Selector */}
       <DropdownMenu>
         <DropdownMenuTrigger asChild>

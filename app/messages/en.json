@@ -101,7 +101,11 @@
       "steel": "Steel",
       "fairy": "Fairy"
     },
-    "addToTeam": "Add to Team"
+    "addToTeam": "Add to Team",
+    "addedToTeam": "Added to Team"
+  },
+  "game": {
+    "selectGame": "Select Game"
   },
   "games": {
     "red-jp": "Pokémon Red (JP)",

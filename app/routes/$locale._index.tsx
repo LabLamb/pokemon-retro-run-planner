@@ -1,11 +1,9 @@
 import type { Route } from "./+types/$locale._index";
-import { useParams } from "react-router";
 import { useTranslation } from "react-i18next";
 import { Welcome } from "../welcome/welcome";
 import { isValidLocale, defaultLocale, type Locale } from "../lib/i18n";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import i18n from "../lib/i18n";
-import { GlobalSwitchers } from "../components/global-switchers";
 
 export function meta({ params }: Route.MetaArgs) {
   const locale = (params.locale as Locale) || defaultLocale;
@@ -63,7 +61,6 @@ export async function loader({ params }: Route.LoaderArgs) {
 export default function LocaleHome({ loaderData }: Route.ComponentProps) {
   const { locale } = loaderData;
   const { i18n } = useTranslation();
-  const [isClient, setIsClient] = useState(false);
 
   // Update i18n language when locale changes (for client-side navigation)
   useEffect(() => {
@@ -72,14 +69,5 @@ export default function LocaleHome({ loaderData }: Route.ComponentProps) {
     }
   }, [locale, i18n]);
 
-  // Only render GlobalSwitchers on client-side to avoid SSG issues
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  return (
-    <>
-      <Welcome />
-    </>
-  );
+  return <Welcome />;
 }
