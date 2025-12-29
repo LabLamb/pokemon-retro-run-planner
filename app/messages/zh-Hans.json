@@ -102,7 +102,10 @@
       "fairy": "妖精"
     },
     "addToTeam": "添加到队伍",
-    "addedToTeam": "已添加到队伍"
+    "addedToTeam": "已添加到队伍",
+    "teamFull": "队伍已满",
+    "fieldSkillsLabel": "场地技能：",
+    "tradeOnly": "通信"
   },  "game": {
     "selectGame": "选择游戏"
   },  "games": {

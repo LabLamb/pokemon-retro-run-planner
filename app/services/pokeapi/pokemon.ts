@@ -63,11 +63,19 @@ export async function fetchPokemonCore(
 /**
  * Fetch only Pokemon types (lightweight)
  * Reuses cached full Pokemon data if available
+ * @param nameOrId - Pokemon name or ID
+ * @param generation - Optional generation number for historical types
  */
 export async function fetchPokemonTypes(
-  nameOrId: string | number
+  nameOrId: string | number,
+  generation?: number
 ): Promise<string[]> {
   const pokemon = await fetchPokemon(nameOrId);
+  
+  if (generation) {
+    return getTypesForGeneration(pokemon, generation);
+  }
+  
   return pokemon.types.map((t) => t.type.name);
 }
 
@@ -88,6 +96,54 @@ export async function fetchPokemonEncounters(
   return fetchFromPokeAPI<LocationAreaEncounter[]>(
     `pokemon/${nameOrId}/encounters`
   );
+}
+
+/**
+ * Get Pokemon types for a specific generation
+ * Uses past_types to return historically accurate types
+ */
+export function getTypesForGeneration(
+  pokemon: Pokemon,
+  generation: number
+): string[] {
+  // If no past_types, use current types
+  if (!pokemon.past_types || pokemon.past_types.length === 0) {
+    return pokemon.types.map((t) => t.type.name);
+  }
+
+  // Check if there are past types for this generation
+  const pastType = pokemon.past_types.find(
+    (pt) => pt.generation.name === `generation-${toRoman(generation)}`
+  );
+
+  // If found, use past types; otherwise use current types
+  if (pastType) {
+    return pastType.types.map((t) => t.type.name);
+  }
+
+  return pokemon.types.map((t) => t.type.name);
+}
+
+/**
+ * Convert number to Roman numeral for generation names
+ */
+function toRoman(num: number): string {
+  const romanNumerals: [number, string][] = [
+    [10, 'x'],
+    [9, 'ix'],
+    [5, 'v'],
+    [4, 'iv'],
+    [1, 'i'],
+  ];
+  
+  let result = '';
+  for (const [value, numeral] of romanNumerals) {
+    while (num >= value) {
+      result += numeral;
+      num -= value;
+    }
+  }
+  return result;
 }
 
 export function canLearnMove(

@@ -6,22 +6,49 @@
 import * as React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Heart } from "lucide-react";
 import { GAMES } from "~/data/games";
-import { POKEMON_TYPES } from "~/data/pokemon-types";
+import { POKEMON_TYPES, TYPE_COLORS_TAILWIND } from "~/data/pokemon-types";
 import { usePokemonSearch } from "~/hooks/use-pokemon-search";
 import { useTeam } from "~/lib/team-provider";
 import { useLocale } from "~/lib/locale-provider";
 import { useGame } from "~/lib/game-provider";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "~/components/ui/select";
 import { MultiSelect } from "~/components/ui/multi-select";
-import { PokemonCard } from "~/components/ui/pokemon-card";
+import {
+  PokemonCard,
+  PokemonCardHeader,
+  PokemonCardTitle,
+  PokemonCardContent,
+  PokemonCardHero,
+  PokemonCardMedia,
+  PokemonCardTypes,
+  PokemonCardSkills,
+  PokemonCardStats,
+  PokemonCardActions,
+} from "~/components/ui/pokemon-card";
 import { PokemonList } from "~/components/ui/pokemon-list";
 import { PokemonCardSkeleton } from "~/components/ui/pokemon-card-skeleton";
 import { Label } from "~/components/ui/label";
 import { Checkbox } from "~/components/ui/checkbox";
 import { Button } from "~/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
+import { Badge } from "~/components/ui/badge";
+import { TypeBadgeList } from "~/components/ui/type-badge";
+import { FieldSkillsDisplay } from "~/components/ui/field-skills-display";
+import { PokemonStats } from "~/components/ui/pokemon-stats";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "~/components/ui/card";
 import { Separator } from "~/components/ui/separator";
 
 export default function FieldMoveBasedSearchRoute() {
@@ -31,15 +58,17 @@ export default function FieldMoveBasedSearchRoute() {
   const { gameId, setGameId } = useGame();
   const [selectedHms, setSelectedHms] = React.useState<string[]>([]);
   const [selectedTypes, setSelectedTypes] = React.useState<string[]>([]);
-  const [includeTradeEvoFinals, setIncludeTradeEvoFinals] = React.useState(false);
+  const [includeTradeEvoFinals, setIncludeTradeEvoFinals] =
+    React.useState(false);
   const [triggerSearch, setTriggerSearch] = React.useState(false);
   const [hasSearched, setHasSearched] = React.useState(false);
-  
+
   // Snapshot filter values when search is triggered
   const [activeGameId, setActiveGameId] = React.useState(gameId);
   const [activeHms, setActiveHms] = React.useState<string[]>([]);
   const [activeTypes, setActiveTypes] = React.useState<string[]>([]);
-  const [activeIncludeTradeEvo, setActiveIncludeTradeEvo] = React.useState(false);
+  const [activeIncludeTradeEvo, setActiveIncludeTradeEvo] =
+    React.useState(false);
 
   const { pokemon, loading, error, availableHms } = usePokemonSearch({
     gameId: activeGameId,
@@ -56,7 +85,7 @@ export default function FieldMoveBasedSearchRoute() {
     setActiveHms(selectedHms);
     setActiveTypes(selectedTypes);
     setActiveIncludeTradeEvo(includeTradeEvoFinals);
-    
+
     setTriggerSearch((prev) => !prev);
     setHasSearched(true);
   };
@@ -77,6 +106,7 @@ export default function FieldMoveBasedSearchRoute() {
       POKEMON_TYPES.map((type) => ({
         id: type,
         label: t(`search.types.${type}`, type),
+        color: TYPE_COLORS_TAILWIND[type] || "bg-gray-400",
       })),
     [t]
   );
@@ -137,7 +167,10 @@ export default function FieldMoveBasedSearchRoute() {
             </div>
 
             <Separator className="md:hidden" />
-            <Separator orientation="vertical" className="hidden md:block self-stretch" />
+            <Separator
+              orientation="vertical"
+              className="hidden md:block self-stretch"
+            />
 
             <div className="flex-1 space-y-2">
               <Label htmlFor="hm-select">
@@ -156,7 +189,10 @@ export default function FieldMoveBasedSearchRoute() {
             </div>
 
             <Separator className="md:hidden" />
-            <Separator orientation="vertical" className="hidden md:block self-stretch" />
+            <Separator
+              orientation="vertical"
+              className="hidden md:block self-stretch"
+            />
 
             <div className="flex-1 space-y-2">
               <Label htmlFor="type-select">
@@ -239,10 +275,7 @@ export default function FieldMoveBasedSearchRoute() {
         <Card>
           <CardContent className="pt-6 text-center">
             <p className="text-muted-foreground">
-              {t(
-                "search.noResults",
-                "No Pokémon found matching your filters."
-              )}
+              {t("search.noResults", "No Pokémon found matching your filters.")}
             </p>
           </CardContent>
         </Card>
@@ -266,45 +299,114 @@ export default function FieldMoveBasedSearchRoute() {
               const isInTeam = team.some(
                 (member) => member !== null && member.id === p.id
               );
-              
+              const isTeamFull = team.filter((slot) => slot !== null).length >= 6;
+
+              // Translate types for display
+              const translatedTypes = p.types.map((type) => ({
+                id: type,
+                label: t(`search.types.${type}`, type),
+              }));
+
+              // Translate field skills for display
+              const translatedFieldSkills = p.learnableHms.map((id) => {
+                const hm = availableHms.find((h) => h.id === id);
+                return { id, label: t(`fieldSkills.${id}`, hm?.label || id) };
+              });
+
               return (
-                <PokemonCard
-                  key={p.id}
-                  name={p.name}
-                  sprite={p.sprite}
-                  types={p.types}
-                  baseHp={p.baseHp}
-                  baseAttack={p.baseAttack}
-                  baseDefense={p.baseDefense}
-                  baseSpAttack={p.baseSpAttack}
-                  baseSpDefense={p.baseSpDefense}
-                  baseSpeed={p.baseSpeed}
-                  allLearnableHms={p.learnableHms.map((id) => {
-                    const hm = availableHms.find((h) => h.id === id);
-                    return { id, label: hm?.label || id };
-                  })}
-                  tradeEvolutionOnly={p.tradeEvolutionOnly}
-                  onAddToTeam={() => addToTeam({
-                    id: p.id,
-                    name: p.name,
-                    sprite: p.sprite,
-                    types: p.types,
-                    baseHp: p.baseHp,
-                    baseAttack: p.baseAttack,
-                    baseDefense: p.baseDefense,
-                    baseSpAttack: p.baseSpAttack,
-                    baseSpDefense: p.baseSpDefense,
-                    baseSpeed: p.baseSpeed,
-                    allLearnableHms: p.learnableHms.map((id) => {
-                      const hm = availableHms.find((h) => h.id === id);
-                      return { id, label: hm?.label || id };
-                    }),
-                    tradeEvolutionOnly: p.tradeEvolutionOnly,
-                  })}
-                  addToTeamLabel={t("search.addToTeam", "Add to Team")}
-                  addedToTeamLabel={t("search.addedToTeam", "Added to Team")}
-                  isAddedToTeam={isInTeam}
-                />
+                <PokemonCard key={p.id}>
+                  <PokemonCardHero backgroundImage={p.sprite}>
+                    <PokemonCardHeader>
+                      <PokemonCardTitle>{p.name}</PokemonCardTitle>
+                      <PokemonCardTypes>
+                        {p.tradeEvolutionOnly && (
+                          <Badge variant="outline" className="text-xs">
+                            {t("search.tradeOnly", "Trade")}
+                          </Badge>
+                        )}
+                        <TypeBadgeList types={translatedTypes} />
+                      </PokemonCardTypes>
+                    </PokemonCardHeader>
+                    <PokemonCardMedia>
+                      <PokemonCardSkills>
+                        <FieldSkillsDisplay
+                          skills={translatedFieldSkills}
+                        />
+                      </PokemonCardSkills>
+                    </PokemonCardMedia>
+                  </PokemonCardHero>
+                  <PokemonCardContent>
+
+                    <PokemonCardStats>
+                      <PokemonStats
+                        stats={{
+                          hp: p.baseHp,
+                          attack: p.baseAttack,
+                          defense: p.baseDefense,
+                          spAttack: p.baseSpAttack,
+                          spDefense: p.baseSpDefense,
+                          speed: p.baseSpeed,
+                        }}
+                        labels={{
+                          hp: `${t("pokemonCard.stats.hp", "HP")}:`,
+                          attack: `${t("pokemonCard.stats.atk", "ATK")}:`,
+                          defense: `${t("pokemonCard.stats.def", "DEF")}:`,
+                          spAttack: `${t("pokemonCard.stats.spAtk", "SP.A")}:`,
+                          spDefense: `${t("pokemonCard.stats.spDef", "SP.D")}:`,
+                          speed: `${t("pokemonCard.stats.spd", "SPD")}:`,
+                        }}
+                      />
+                    </PokemonCardStats>
+
+                    <PokemonCardActions>
+                      <div className="flex gap-2">
+                        <Button
+                          onClick={() =>
+                            addToTeam({
+                              id: p.id,
+                              name: p.name,
+                              sprite: p.sprite,
+                              types: p.types,
+                              baseHp: p.baseHp,
+                              baseAttack: p.baseAttack,
+                              baseDefense: p.baseDefense,
+                              baseSpAttack: p.baseSpAttack,
+                              baseSpDefense: p.baseSpDefense,
+                              baseSpeed: p.baseSpeed,
+                              allLearnableHms: p.learnableHms.map((id) => {
+                                const hm = availableHms.find((h) => h.id === id);
+                                return { id, label: hm?.label || id };
+                              }),
+                              tradeEvolutionOnly: p.tradeEvolutionOnly,
+                            })
+                          }
+                          disabled={isInTeam || isTeamFull}
+                          variant={isTeamFull && !isInTeam ? "secondary" : "default"}
+                          className="flex-1"
+                          size="sm"
+                        >
+                          {isInTeam
+                            ? t("search.addedToTeam", "Added to Team")
+                            : isTeamFull
+                            ? t("search.teamFull", "Team Full")
+                            : t("search.addToTeam", "Add to Team")}
+                        </Button>
+                        <Button
+                          onClick={() => {
+                            // Favorite callback will be implemented later
+                            console.log('Favorite pokemon:', p.id);
+                          }}
+                          variant="outline"
+                          size="sm"
+                          className="px-3"
+                          aria-label={t("search.addToFavorites", "Add to Favorites")}
+                        >
+                          <Heart className="h-4 w-4" />
+                        </Button>
+                      </div>
+                    </PokemonCardActions>
+                  </PokemonCardContent>
+                </PokemonCard>
               );
             })}
           </PokemonList>

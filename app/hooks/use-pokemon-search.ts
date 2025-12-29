@@ -19,6 +19,7 @@ import { filterObtainablePokemon } from "~/services/pokeapi/availability";
 import {
   fetchPokemon,
   getLearnableMoves,
+  getTypesForGeneration,
 } from "~/services/pokeapi/pokemon";
 import { fetchSpecies, getEvolutionChainId } from "~/services/pokeapi/species";
 import {
@@ -199,7 +200,7 @@ export function usePokemonSearch(
       
       // Get localized name
       const localizedName = getLocalizedName(speciesData.names, locale);
-      const types = pokemonData.types.map((t) => t.type.name);
+      const types = getTypesForGeneration(pokemonData, game?.generation || 1);
 
       // Filter by type if specified
       if (selectedTypes.length > 0) {

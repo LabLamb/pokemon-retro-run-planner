@@ -102,7 +102,8 @@
       "fairy": "Fada"
     },
     "addToTeam": "Adicionar à equipe",
-    "addedToTeam": "Adicionado à equipe"
+    "addedToTeam": "Adicionado à equipe",    "teamFull": "Equipe Cheia",    "fieldSkillsLabel": "Habilidades de Campo:",
+    "tradeOnly": "Troca"
   },  "game": {
     "selectGame": "Selecionar Jogo"
   },  "games": {

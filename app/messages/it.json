@@ -101,7 +101,10 @@
       "fairy": "Folletto"
     },
     "addToTeam": "Aggiungi alla squadra",
-    "addedToTeam": "Aggiunto alla squadra"
+    "addedToTeam": "Aggiunto alla squadra",
+    "teamFull": "Squadra Completa",
+    "fieldSkillsLabel": "Abilità di Campo:",
+    "tradeOnly": "Scambio"
   },  "game": {
     "selectGame": "Seleziona Gioco"
   },  "games": {

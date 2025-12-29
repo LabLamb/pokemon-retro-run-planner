@@ -95,7 +95,8 @@
       "fairy": "Fée"
     },
     "addToTeam": "Ajouter à l'équipe",
-    "addedToTeam": "Ajouté à l'équipe"
+    "addedToTeam": "Ajouté à l'équipe",    "teamFull": "Équipe Complète",    "fieldSkillsLabel": "Compétences de Terrain:",
+    "tradeOnly": "Échange"
   },  "game": {
     "selectGame": "Sélectionner un Jeu"
   },  "games": {

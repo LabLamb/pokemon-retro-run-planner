@@ -102,7 +102,10 @@
       "fairy": "Fairy"
     },
     "addToTeam": "Add to Team",
-    "addedToTeam": "Added to Team"
+    "addedToTeam": "Added to Team",
+    "teamFull": "Team Full",
+    "fieldSkillsLabel": "Field Skills:",
+    "tradeOnly": "Trade"
   },
   "game": {
     "selectGame": "Select Game"

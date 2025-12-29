@@ -98,7 +98,8 @@
       "fairy": "Fee"
     },
     "addToTeam": "Zum Team hinzufügen",
-    "addedToTeam": "Zum Team hinzugefügt"
+    "addedToTeam": "Zum Team Hinzugefügt",    "teamFull": "Team Voll",    "fieldSkillsLabel": "Feldfertigkeiten:",
+    "tradeOnly": "Tausch"
   },
   "game": {
     "selectGame": "Spiel auswählen"

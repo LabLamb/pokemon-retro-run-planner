@@ -1,159 +1,176 @@
 /**
- * Tests for PokemonCard component
+ * Tests for PokemonCard component - Slot-based API
  */
 
 import { describe, it, expect } from "vitest";
 import { render } from "@testing-library/react";
-import { PokemonCard } from "../pokemon-card";
+import {
+  PokemonCard,
+  PokemonCardHeader,
+  PokemonCardTitle,
+  PokemonCardContent,
+  PokemonCardHero,
+  PokemonCardMedia,
+  PokemonCardTypes,
+  PokemonCardSkills,
+  PokemonCardStats,
+  PokemonCardActions,
+} from "../pokemon-card";
+import { TypeBadgeList } from "../type-badge";
+import { PokemonStats } from "../pokemon-stats";
+import { FieldSkillsDisplay } from "../field-skills-display";
+import { Badge } from "../badge";
+import { Button } from "../button";
 
-describe("PokemonCard", () => {
-  it("should render Pokémon name", () => {
+describe("PokemonCard slot-based components", () => {
+  it("should render Pokémon name in title slot", () => {
     const { getByText } = render(
-      <PokemonCard
-        name="pikachu"
-        sprite="sprite.png"
-        types={["electric"]}
-        baseHp={35}
-        baseAttack={55}
-        baseDefense={40}
-        baseSpAttack={50}
-        baseSpDefense={50}
-        baseSpeed={90}
-        allLearnableHms={[]}
-        tradeEvolutionOnly={false}
-      />
+      <PokemonCard>
+        <PokemonCardHeader>
+          <PokemonCardTitle>pikachu</PokemonCardTitle>
+        </PokemonCardHeader>
+      </PokemonCard>
     );
 
     expect(getByText("pikachu")).toBeDefined();
   });
 
-  it("should render types", () => {
+  it("should render types using TypeBadgeList", () => {
     const { getByText } = render(
-      <PokemonCard
-        name="charizard"
-        sprite="sprite.png"
-        types={["fire", "flying"]}
-        baseHp={78}
-        baseAttack={84}
-        baseDefense={78}
-        baseSpAttack={109}
-        baseSpDefense={85}
-        baseSpeed={100}
-        allLearnableHms={[]}
-        tradeEvolutionOnly={false}
-      />
+      <PokemonCard>
+        <PokemonCardContent>
+          <TypeBadgeList
+            types={[
+              { id: "fire", label: "Fire" },
+              { id: "flying", label: "Flying" },
+            ]}
+          />
+        </PokemonCardContent>
+      </PokemonCard>
     );
 
-    expect(getByText("fire")).toBeDefined();
-    expect(getByText("flying")).toBeDefined();
+    expect(getByText("Fire")).toBeDefined();
+    expect(getByText("Flying")).toBeDefined();
   });
 
-  it("should render stats", () => {
+  it("should render stats using PokemonStats component", () => {
     const { getByText, getAllByText } = render(
-      <PokemonCard
-        name="mewtwo"
-        sprite="sprite.png"
-        types={["psychic"]}
-        baseHp={106}
-        baseAttack={110}
-        baseDefense={90}
-        baseSpAttack={154}
-        baseSpDefense={90}
-        baseSpeed={130}
-        allLearnableHms={[]}
-        tradeEvolutionOnly={false}
-      />
+      <PokemonCard>
+        <PokemonCardContent>
+          <PokemonCardStats>
+            <PokemonStats
+              stats={{
+                hp: 106,
+                attack: 110,
+                defense: 90,
+                spAttack: 154,
+                spDefense: 90,
+                speed: 130,
+              }}
+            />
+          </PokemonCardStats>
+        </PokemonCardContent>
+      </PokemonCard>
     );
 
     expect(getByText("106")).toBeDefined();
     expect(getByText("110")).toBeDefined();
-    expect(getAllByText("90")).toHaveLength(2); // Defense and Special Defense both have 90
+    expect(getAllByText("90")).toHaveLength(2);
     expect(getByText("154")).toBeDefined();
     expect(getByText("130")).toBeDefined();
   });
 
-  it("should render trade evolution badge when applicable", () => {
+  it("should render trade evolution badge in header", () => {
     const { getByText } = render(
-      <PokemonCard
-        name="alakazam"
-        sprite="sprite.png"
-        types={["psychic"]}
-        baseHp={55}
-        baseAttack={50}
-        baseDefense={45}
-        baseSpAttack={135}
-        baseSpDefense={95}
-        baseSpeed={120}
-        allLearnableHms={[]}
-        tradeEvolutionOnly={true}
-      />
+      <PokemonCard>
+        <PokemonCardHeader>
+          <div className="flex items-center justify-between gap-2">
+            <PokemonCardTitle>alakazam</PokemonCardTitle>
+            <Badge variant="outline">Trade</Badge>
+          </div>
+        </PokemonCardHeader>
+      </PokemonCard>
     );
 
     expect(getByText("Trade")).toBeDefined();
+    expect(getByText("alakazam")).toBeDefined();
   });
 
-  it("should render learnable HMs", () => {
+  it("should render learnable HMs in skills slot", () => {
     const { getByText } = render(
-      <PokemonCard
-        name="lapras"
-        sprite="sprite.png"
-        types={["water", "ice"]}
-        baseHp={130}
-        baseAttack={85}
-        baseDefense={80}
-        baseSpAttack={85}
-        baseSpDefense={95}
-        baseSpeed={60}
-        allLearnableHms={[
-          { id: "surf", label: "Surf" },
-          { id: "strength", label: "Strength" },
-        ]}
-        tradeEvolutionOnly={false}
-      />
+      <PokemonCard>
+        <PokemonCardContent>
+          <PokemonCardSkills>
+            <FieldSkillsDisplay
+              skills={[
+                { id: "surf", label: "Surf" },
+                { id: "strength", label: "Strength" },
+              ]}
+            />
+          </PokemonCardSkills>
+        </PokemonCardContent>
+      </PokemonCard>
     );
 
     expect(getByText("Surf")).toBeDefined();
     expect(getByText("Strength")).toBeDefined();
   });
 
-  it("should render sprite image", () => {
-    const { getByAltText } = render(
-      <PokemonCard
-        name="pikachu"
-        sprite="https://example.com/pikachu.png"
-        types={["electric"]}
-        baseHp={35}
-        baseAttack={55}
-        baseDefense={40}
-        baseSpAttack={50}
-        baseSpDefense={50}
-        baseSpeed={90}
-        allLearnableHms={[]}
-        tradeEvolutionOnly={false}
-      />
+  it("should allow flexible composition of all slots", () => {
+    const { getByText, getAllByText } = render(
+      <PokemonCard>
+        <PokemonCardHero backgroundImage="charizard.png">
+          <PokemonCardHeader>
+            <PokemonCardTitle>charizard</PokemonCardTitle>
+            <PokemonCardTypes>
+              <Badge variant="outline">Trade</Badge>
+              <TypeBadgeList
+                types={[
+                  { id: "fire", label: "Fire" },
+                  { id: "flying", label: "Flying" },
+                ]}
+              />
+            </PokemonCardTypes>
+          </PokemonCardHeader>
+          <PokemonCardMedia>
+            <PokemonCardSkills>
+              <FieldSkillsDisplay
+                skills={[
+                  { id: "fly", label: "Fly" },
+                  { id: "strength", label: "Strength" },
+                ]}
+              />
+            </PokemonCardSkills>
+          </PokemonCardMedia>
+        </PokemonCardHero>
+        <PokemonCardContent>
+          <PokemonCardStats>
+            <PokemonStats
+              stats={{
+                hp: 78,
+                attack: 84,
+                defense: 78,
+                spAttack: 109,
+                spDefense: 85,
+                speed: 100,
+              }}
+            />
+          </PokemonCardStats>
+          <PokemonCardActions>
+            <Button size="sm">Add to Team</Button>
+          </PokemonCardActions>
+        </PokemonCardContent>
+      </PokemonCard>
     );
 
-    const img = getByAltText("pikachu") as HTMLImageElement;
-    expect(img.src).toBe("https://example.com/pikachu.png");
-  });
-
-  it("should show placeholder when no sprite", () => {
-    const { getByText } = render(
-      <PokemonCard
-        name="missingno"
-        sprite=""
-        types={["normal"]}
-        baseHp={0}
-        baseAttack={0}
-        baseDefense={0}
-        baseSpAttack={0}
-        baseSpDefense={0}
-        baseSpeed={0}
-        allLearnableHms={[]}
-        tradeEvolutionOnly={false}
-      />
-    );
-
-    expect(getByText("No image")).toBeDefined();
+    expect(getByText("charizard")).toBeDefined();
+    expect(getByText("Trade")).toBeDefined();
+    expect(getByText("Fire")).toBeDefined();
+    expect(getByText("Flying")).toBeDefined();
+    expect(getAllByText("78")).toHaveLength(2); // hp and defense both have value 78
+    expect(getByText("84")).toBeDefined();
+    expect(getByText("109")).toBeDefined();
+    expect(getByText("Fly")).toBeDefined();
+    expect(getByText("Add to Team")).toBeDefined();
   });
 });

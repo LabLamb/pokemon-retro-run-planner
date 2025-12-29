@@ -93,7 +93,8 @@
       "fairy": "フェアリー"
     },
     "addToTeam": "チームに追加",
-    "addedToTeam": "チームに追加済み"
+    "addedToTeam": "チームに追加済み",    "teamFull": "チーム満員",    "fieldSkillsLabel": "フィールドスキル：",
+    "tradeOnly": "通信"
   },
   "game": {
     "selectGame": "ゲームを選択"

@@ -98,7 +98,10 @@
       "fairy": "Hada"
     },
     "addToTeam": "Añadir al equipo",
-    "addedToTeam": "Añadido al equipo"
+    "addedToTeam": "Añadido al equipo",
+    "teamFull": "Equipo Lleno",
+    "fieldSkillsLabel": "Habilidades de Campo:",
+    "tradeOnly": "Intercambio"
   },  "game": {
     "selectGame": "Seleccionar Juego"
   },  "games": {

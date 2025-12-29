@@ -71,8 +71,51 @@ All components in [app/components/ui/](app/components/ui/) follow **shadcn/ui** 
 - Radix UI primitives with Tailwind styling
 - Variants via `class-variance-authority`
 - Use `cn()` utility from [app/lib/utils.ts](app/lib/utils.ts) for class merging
+- **Slot-based composition** - Always use compound component patterns with slots for flexibility
 
 Import pattern: `import { Button } from "~/components/ui/button"`
+
+#### Slot-Based Component Architecture
+**ALWAYS use slot-based composition for complex components:**
+
+```tsx
+// ✅ CORRECT - Slot-based compound component pattern
+export function Card({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return <div className={cn("card-styles", className)} {...props} />
+}
+
+export function CardHeader({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return <div className={cn("header-styles", className)} {...props} />
+}
+
+export function CardContent({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return <div className={cn("content-styles", className)} {...props} />
+}
+
+// Usage allows flexible composition
+<Card>
+  <CardHeader>Title</CardHeader>
+  <CardContent>Body</CardContent>
+</Card>
+
+// ❌ WRONG - Monolithic component with props
+export function Card({ title, content, footer, showBorder }: CardProps) {
+  return (
+    <div>
+      {title && <div>{title}</div>}
+      <div>{content}</div>
+      {footer && <div>{footer}</div>}
+    </div>
+  )
+}
+```
+
+**Key slot-based patterns:**
+- Export subcomponents as separate named exports (e.g., `CardHeader`, `CardContent`, `CardFooter`)
+- Use `asChild` prop from Radix UI for polymorphic composition
+- Allow consumers to compose layout and content flexibly
+- Avoid rigid prop-based content injection
+- Preserve HTML semantics and accessibility through proper element composition
 
 ## Development Workflows
 
@@ -165,11 +208,25 @@ No global state library - using React Context for:
 2. Use `t("your.key", "English fallback")` in components
 
 ### Adding a New UI Component
-Follow shadcn/ui patterns in [app/components/ui/](app/components/ui/):
+Follow shadcn/ui slot-based patterns in [app/components/ui/](app/components/ui/):
+- **Always use compound component pattern with slots** - export root component and all subcomponents separately
 - Radix primitive + Tailwind styling
-- Export component and sub-components
+- Export component and sub-components as named exports
 - Use `cn()` for conditional classes
 - Define variants with `cva()` if needed
+- Leverage `asChild` prop for polymorphic behavior
+- Prefer composition over configuration (slots over props)
+
+**Example structure:**
+```tsx
+// ✅ Proper slot-based component
+export const Dialog = DialogPrimitive.Root
+export const DialogTrigger = DialogPrimitive.Trigger
+export const DialogContent = React.forwardRef<...>((props) => ...)
+export const DialogHeader = ({ className, ...props }) => (...)
+export const DialogTitle = React.forwardRef<...>((props) => ...)
+export const DialogDescription = React.forwardRef<...>((props) => ...)
+```
 
 ### Testing Routes Locally
 - Dev server auto-updates on file changes

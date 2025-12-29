@@ -60,6 +60,10 @@ export interface Pokemon {
   height: number;
   weight: number;
   types: PokemonType[];
+  past_types?: Array<{
+    generation: NamedAPIResource;
+    types: PokemonType[];
+  }>;
   stats: PokemonStat[];
   sprites: PokemonSprites;
   moves: PokemonMove[];

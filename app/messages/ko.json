@@ -95,7 +95,8 @@
       "fairy": "페어리"
     },
     "addToTeam": "팀에 추가",
-    "addedToTeam": "팀에 추가됨"
+    "addedToTeam": "팀에 추가됨",    "teamFull": "팀 꽉 찼음",    "fieldSkillsLabel": "필드 스킬:",
+    "tradeOnly": "통신"
   },
   "game": {
     "selectGame": "게임 선택"
